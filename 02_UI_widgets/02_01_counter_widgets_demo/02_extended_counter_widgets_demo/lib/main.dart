@@ -69,6 +69,16 @@ class _MyHomePageState extends State<MyHomePage> {
             RaisedButton(
               onPressed: _resetCounter,
               child: Text("Reset"),
+            ),
+            Icon(
+              Icons.android,
+              size: 50,
+              color: Colors.lightGreenAccent,
+            ),
+            Icon(
+              Icons.settings_backup_restore,
+              size: 40,
+              color: Colors.blueAccent,
             )
           ],
         ),
