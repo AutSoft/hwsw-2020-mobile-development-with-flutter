@@ -52,6 +52,13 @@ class _MyHomePageState extends State<MyHomePage> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
+            Image.asset(
+              "assets/images/logo_flutter.png",
+              width: 100,
+              height: 100,
+            ),
+            Image.network("https://picsum.photos/150",
+            ),
             Text(
               'You have pushed the button this many times:',
             ),
