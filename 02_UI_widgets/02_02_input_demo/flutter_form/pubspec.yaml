@@ -1,5 +1,5 @@
-name: counter_widgets_demo
-description: The Counter example application with some tweaks to showcase basic Material app widgets.
+name: flutter_form
+description: A skeleton Flutter app for demonstrating a few different user input widgets on a simple form.
 
 # The following line prevents the package from being accidentally published to
 # pub.dev using `pub publish`. This is preferred for private packages.

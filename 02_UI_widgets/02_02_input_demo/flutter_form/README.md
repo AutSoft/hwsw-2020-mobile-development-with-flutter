@@ -1,6 +1,6 @@
-# counter_widgets_demo
+# flutter_form
 
-The Counter example application with some tweaks to showcase basic Material app widgets.
+A skeleton Flutter app for demonstrating a few different user input widgets on a simple form.
 
 ## Getting Started
 
