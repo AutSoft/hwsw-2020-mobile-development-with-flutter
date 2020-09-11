@@ -98,7 +98,7 @@ class _RealEstateSearchFormPageState extends State<RealEstateSearchFormPage> {
         title: Text(widget.title),
       ),
       body: SingleChildScrollView(
-        // TODO Add 8 px padding with a Padding widget and a background color with a Container and 16 px padding
+        // TODO Add 8 px padding with a Padding widget and a background color by a Container and 16 px padding
         child: Padding(
           padding: EdgeInsets.all(16),
           child: Container(
@@ -161,7 +161,7 @@ class _RealEstateSearchFormPageState extends State<RealEstateSearchFormPage> {
                   children: [
                     Text("${_MIN_PRICE.round()} MFt"),
                     Expanded(
-                      // TODO Add a Slider row for price range
+                      // TODO Add a Slider for price range of _MIN_PRICE to _MAX_PRICE
                       // TODO Change the Slider to a RangeSlider
                       child: RangeSlider(
                         values: RangeValues(_minPriceValue, _maxPriceValue),
@@ -180,7 +180,7 @@ class _RealEstateSearchFormPageState extends State<RealEstateSearchFormPage> {
                     Text("${_MAX_PRICE.round()} MFt"),
                   ],
                 ),
-                // TODO Add a Switch row to show the date picker row
+                // TODO Add a Switch row to show or hide the date picker row
                 Row(
                   children: [
                     Text("Show more options"),
@@ -191,7 +191,10 @@ class _RealEstateSearchFormPageState extends State<RealEstateSearchFormPage> {
                         })
                   ],
                 ),
-                // TODO Add a DatePicker row for soonest moving in date
+                /* TODO Add a row that acts as a date chooser, opening a DatePicker when a button is clicked
+                * and that displays the selected date as the soonest moving in date.
+                * This row must only be displayed when the previous switch is ON.
+                */
                 (_isShowingDetailedSearch)
                     ? Row(
                         children: [
@@ -207,12 +210,12 @@ class _RealEstateSearchFormPageState extends State<RealEstateSearchFormPage> {
                         ],
                       )
                     : Row(),
+                // TODO Add a RaisedButton with an icon for the search action
                 Row(
                   mainAxisAlignment: MainAxisAlignment.end,
                   children: [
                     Padding(
                       padding: const EdgeInsets.only(top: 16),
-                      // TODO Add a RaisedButton with an icon for the search action
                       child: RaisedButton.icon(
                         onPressed: () {},
                         icon: Icon(Icons.search),
@@ -229,6 +232,7 @@ class _RealEstateSearchFormPageState extends State<RealEstateSearchFormPage> {
     );
   }
 
+  // TODO Implement this method to show a DatePicker and save the selected date as state
   void showSoonestMovingDatePicker() async {
     final now = DateTime.now();
     final date = await showDatePicker(
@@ -242,7 +246,7 @@ class _RealEstateSearchFormPageState extends State<RealEstateSearchFormPage> {
 
   @override
   void dispose() {
-    // TODO Dispose the created TextFieldController
+    // TODO Dispose the previously created TextFieldController
     queryTextController.dispose();
     super.dispose();
   }
