@@ -1,6 +1,6 @@
-# counter_widgets_demo
+# basic_widgets_demo_starter
 
-The Counter example application with some tweaks to showcase basic Material app widgets.
+The Counter example application as a base for showcasing basic Material app widgets.
 
 ## Getting Started
 
