@@ -16,7 +16,7 @@ class CardsDemo extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      // Add a key to the Scaffold
+      // TODO Add a key to the Scaffold
       // https://medium.com/@ksheremet/flutter-showing-snackbar-within-the-widget-that-builds-a-scaffold-3a817635aeb2
       key: scaffoldKey,
       appBar: AppBar(
@@ -43,6 +43,7 @@ class CardsDemo extends StatelessWidget {
                       color: entry.value,
                       child: InkWell(
                         onTap: () {
+                          // TODO Show a SnackBar
                           scaffoldKey.currentState.showSnackBar(
                             SnackBar(
                               content: Text("${entry.key} clicked!"),

@@ -27,11 +27,9 @@ class _NavigationWidgetsDemoState extends State<NavigationWidgetsDemo> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      // TODO Add an AppBar
       appBar: AppBar(
         title: Text("A Nice Fintech App"),
       ),
-      // TODO Add a Drawer
       drawer: Drawer(
         child: SingleChildScrollView(
           child: Column(
@@ -63,9 +61,7 @@ class _NavigationWidgetsDemoState extends State<NavigationWidgetsDemo> {
           ),
         ),
       ),
-      // TODO Add a BottomNavigationBar
       bottomNavigationBar: bottomNavBarIfNeeded(_currentNavDrawerSelection),
-      // TODO Add the body based on the Drawer and the BottomNavigationBar selection
       body: buildBody(_currentNavDrawerSelection, _currentBottomNavIndex),
     );
   }
@@ -93,6 +89,8 @@ class _NavigationWidgetsDemoState extends State<NavigationWidgetsDemo> {
           onTap: _onBottomNavTap,
         );
       case TopLevelScreen.MESSAGES:
+        return null;
+      default:
         return null;
     }
   }

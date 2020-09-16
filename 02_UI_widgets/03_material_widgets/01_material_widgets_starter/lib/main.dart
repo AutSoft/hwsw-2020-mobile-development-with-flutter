@@ -3,6 +3,7 @@ import 'package:material_widgets/demos/navigation_widgets_demo.dart';
 import 'package:material_widgets/demos/tabs_demo.dart';
 import 'package:material_widgets/demos/scrolling_demo.dart';
 
+import 'demo.dart';
 import 'demos/card_demo.dart';
 
 void main() {
@@ -18,27 +19,22 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
-      home: showDemoContent(Demo._04_NAVIGATION_WIDGETS),
+      home: showDemoContent(Demo.d01_CARDS),
     );
   }
 }
 
 Widget showDemoContent(Demo demo) {
   switch (demo) {
-    case Demo._01_CARDS:
+    case Demo.d01_CARDS:
       return CardsDemo();
-    case Demo._02_SCROLLING:
+    case Demo.d02_SCROLLING:
       return ScrollingDemo();
-    case Demo._03_TABS:
+    case Demo.d03_TABS:
       return TabsDemo();
-    case Demo._04_NAVIGATION_WIDGETS:
+    case Demo.d04_NAVIGATION_WIDGETS:
       return NavigationWidgetsDemo();
+    default:
+      return Container();
   }
-}
-
-enum Demo {
-  _01_CARDS,
-  _02_SCROLLING,
-  _03_TABS,
-  _04_NAVIGATION_WIDGETS,
 }

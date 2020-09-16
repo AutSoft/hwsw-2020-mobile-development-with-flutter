@@ -8,7 +8,6 @@ class TabsDemo extends StatelessWidget {
       appBar: AppBar(
         title: Text("Tabs Demo"),
       ),
-      // TODO Implement 3 Tabs with any content
       body: DefaultTabController(
         length: 3,
         child: Scaffold(
