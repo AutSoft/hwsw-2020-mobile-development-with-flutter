@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="NONE" />
+  </component>
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="aa48ee22-d336-4b87-8ce3-9c7dd2f7f2d1" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[Pixel_2_API_30]" />
+  <component name="Git.Settings">
+    <branch-grouping />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../.." />
+    <option name="RESET_MODE" value="SOFT" />
+  </component>
+  <component name="GitToolBoxStore">
+    <option name="projectConfigVersion" value="2" />
+  </component>
+  <component name="ProjectId" id="1gdafSihcRAUGP7VI7ODKGgHI2I" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="SONARLINT_PRECOMMIT_ANALYSIS" value="true" />
+    <property name="add_unversioned_files" value="true" />
+    <property name="com.intellij.ide.scratch.LRUPopupBuilder$1/New Scratch File" value="kotlin" />
+    <property name="dart.analysis.tool.window.force.activate" value="true" />
+    <property name="dart.analysis.tool.window.visible" value="false" />
+    <property name="io.flutter.reload.alreadyRun" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="show.migrate.to.gradle.popup" value="false" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\juhos.istvan\Dropbox\SoftwareProjects\AutSoft\HWSW\FlutterTanfolyam2020\02_UI_widgets\01_basic_widgets\01_basic_widgets_starter" />
+    </key>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="aa48ee22-d336-4b87-8ce3-9c7dd2f7f2d1" name="Default Changelist" comment="" />
+      <created>1598447025864</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1598447025864</updated>
+    </task>
+    <task id="LOCAL-00001" summary="Add initial 02_01_counter_widgets_demo project">
+      <created>1598448393151</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1598448393151</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Add initial 02_01_counter_widgets_demo project">
+      <created>1598448601428</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1598448601428</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Add initial 02_01_counter_widgets_demo project">
+      <created>1598455701236</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1598455701236</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Update 01_basic_widgets_starter project">
+      <created>1600206946221</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1600206946222</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Update basic_widgets app IDs">
+      <created>1600209052189</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1600209052189</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Update basic_widgets app IDs and metadata">
+      <created>1600210910468</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1600210910468</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
+    <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Add initial 02_01_counter_widgets_demo project" />
+    <MESSAGE value="Update 01_basic_widgets_starter project" />
+    <MESSAGE value="Update basic_widgets app IDs" />
+    <MESSAGE value="Update basic_widgets app IDs and metadata" />
+    <option name="LAST_COMMIT_MESSAGE" value="Update basic_widgets app IDs and metadata" />
+    <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
+    <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="1813" y="100" width="1534" height="1207" key="AVDManager" timestamp="1600205932939">
+      <screen x="0" y="0" width="3440" height="1400" />
+    </state>
+    <state x="1813" y="100" width="1534" height="1207" key="AVDManager/-1920.165.1920.1040/0.0.3440.1400@0.0.3440.1400" timestamp="1600205932939" />
+    <state x="1355" y="170" width="1895" height="827" key="CommitChangelistDialog2" timestamp="1600210909605">
+      <screen x="0" y="0" width="3440" height="1400" />
+    </state>
+    <state x="1355" y="170" width="1895" height="827" key="CommitChangelistDialog2/-1920.165.1920.1040/0.0.3440.1400@0.0.3440.1400" timestamp="1600210909605" />
+    <state x="1499" y="441" key="FileChooserDialogImpl" timestamp="1600201363596">
+      <screen x="0" y="0" width="3440" height="1400" />
+    </state>
+    <state x="1499" y="441" key="FileChooserDialogImpl/-1920.165.1920.1040/0.0.3440.1400@0.0.3440.1400" timestamp="1600201363596" />
+    <state x="837" y="328" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1598629880791" />
+    <state x="1860" y="492" key="GitRewordDialog" timestamp="1598448551659">
+      <screen x="0" y="0" width="3440" height="1400" />
+    </state>
+    <state x="1860" y="492" key="GitRewordDialog/-1920.165.1920.1040/0.0.3440.1400@0.0.3440.1400" timestamp="1598448551659" />
+    <state width="1674" height="553" key="GridCell.Tab.0.bottom" timestamp="1600211015124">
+      <screen x="0" y="0" width="3440" height="1400" />
+    </state>
+    <state width="1674" height="553" key="GridCell.Tab.0.bottom/-1920.165.1920.1040/0.0.3440.1400@0.0.3440.1400" timestamp="1600211015124" />
+    <state width="1877" height="393" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1598630038602" />
+    <state width="2517" height="393" key="GridCell.Tab.0.bottom/4480.0.1920.1040/0.0.2560.1040/2560.0.1920.1040@0.0.2560.1040" timestamp="1598878973493" />
+    <state width="1674" height="553" key="GridCell.Tab.0.center" timestamp="1600211015123">
+      <screen x="0" y="0" width="3440" height="1400" />
+    </state>
+    <state width="1674" height="553" key="GridCell.Tab.0.center/-1920.165.1920.1040/0.0.3440.1400@0.0.3440.1400" timestamp="1600211015123" />
+    <state width="1877" height="393" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1598630038601" />
+    <state width="2517" height="393" key="GridCell.Tab.0.center/4480.0.1920.1040/0.0.2560.1040/2560.0.1920.1040@0.0.2560.1040" timestamp="1598878973493" />
+    <state width="1674" height="553" key="GridCell.Tab.0.left" timestamp="1600211015123">
+      <screen x="0" y="0" width="3440" height="1400" />
+    </state>
+    <state width="1674" height="553" key="GridCell.Tab.0.left/-1920.165.1920.1040/0.0.3440.1400@0.0.3440.1400" timestamp="1600211015123" />
+    <state width="1877" height="393" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1598630038601" />
+    <state width="2517" height="393" key="GridCell.Tab.0.left/4480.0.1920.1040/0.0.2560.1040/2560.0.1920.1040@0.0.2560.1040" timestamp="1598878973493" />
+    <state width="1674" height="553" key="GridCell.Tab.0.right" timestamp="1600211015123">
+      <screen x="0" y="0" width="3440" height="1400" />
+    </state>
+    <state width="1674" height="553" key="GridCell.Tab.0.right/-1920.165.1920.1040/0.0.3440.1400@0.0.3440.1400" timestamp="1600211015123" />
+    <state width="1877" height="393" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1598630038602" />
+    <state width="2517" height="393" key="GridCell.Tab.0.right/4480.0.1920.1040/0.0.2560.1040/2560.0.1920.1040@0.0.2560.1040" timestamp="1598878973493" />
+    <state x="1678" y="325" key="Vcs.Push.Dialog.v2" timestamp="1598455708039">
+      <screen x="0" y="0" width="3440" height="1400" />
+    </state>
+    <state x="1678" y="325" key="Vcs.Push.Dialog.v2/-1920.165.1920.1040/0.0.3440.1400@0.0.3440.1400" timestamp="1598455708039" />
+    <state width="1224" height="500" key="javadoc.popup.new" timestamp="1600208688839">
+      <screen x="0" y="0" width="3440" height="1400" />
+    </state>
+    <state width="1224" height="500" key="javadoc.popup.new/-1920.165.1920.1040/0.0.3440.1400@0.0.3440.1400" timestamp="1600208688839" />
+    <state width="955" height="530" key="javadoc.popup.new/0.0.1920.1040@0.0.1920.1040" timestamp="1598629361116" />
+    <state x="1749" y="302" width="672" height="678" key="search.everywhere.popup" timestamp="1598614764364">
+      <screen x="0" y="0" width="3440" height="1400" />
+    </state>
+    <state x="1749" y="302" width="672" height="678" key="search.everywhere.popup/-1920.165.1920.1040/0.0.3440.1400@0.0.3440.1400" timestamp="1598614764364" />
+  </component>
+</project>

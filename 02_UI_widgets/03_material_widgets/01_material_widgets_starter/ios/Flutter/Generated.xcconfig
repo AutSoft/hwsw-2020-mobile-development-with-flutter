@@ -1,0 +1,14 @@
+
+FLUTTER_ROOT=C:\_flutter
+FLUTTER_APPLICATION_PATH=C:\Users\juhos.istvan\Dropbox\SoftwareProjects\AutSoft\HWSW\FlutterTanfolyam2020\02_UI_widgets\02_03_material_widgets\02_material_widgets\material_widgets
+FLUTTER_TARGET=lib\main.dart
+FLUTTER_BUILD_DIR=build
+SYMROOT=${SOURCE_ROOT}/../build\ios
+OTHER_LDFLAGS=$(inherited) -framework Flutter
+FLUTTER_FRAMEWORK_DIR=C:\_flutter\bin\cache\artifacts\engine\ios
+FLUTTER_BUILD_NAME=1.0.0
+FLUTTER_BUILD_NUMBER=1
+DART_OBFUSCATION=false
+TRACK_WIDGET_CREATION=false
+TREE_SHAKE_ICONS=false
+PACKAGE_CONFIG=.packages
