@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_form/util.dart';
+
+import 'util.dart';
 
 void main() {
   runApp(MyApp());
@@ -29,28 +30,24 @@ class RealEstateSearchFormPage extends StatefulWidget {
       _RealEstateSearchFormPageState();
 }
 
-const double _MIN_PRICE = 0;
-
-const double _MAX_PRICE = 150;
-
-enum PropertySearchType { forSale, forRent }
-
 class _RealEstateSearchFormPageState extends State<RealEstateSearchFormPage> {
+  // TODO Add state variables
   bool _isNewlyBuiltChecked = false;
 
   bool _isShowingDetailedSearch = false;
 
   PropertySearchType _propertySearchType = PropertySearchType.forSale;
 
-  double _minPriceValue = _MIN_PRICE;
+  double _minPriceValue = MIN_PRICE;
 
-  double _maxPriceValue = _MAX_PRICE;
+  double _maxPriceValue = MAX_PRICE;
 
   DateTime _soonestMovingInDate = DateTime.now();
 
   // TODO Add a TextEditingController to access TextField data
   final queryTextController = TextEditingController();
 
+  // TODO Implement state updating methods for state variables
   void showDetailedSearch(bool show) {
     setState(() {
       _isShowingDetailedSearch = show;
@@ -156,28 +153,29 @@ class _RealEstateSearchFormPageState extends State<RealEstateSearchFormPage> {
                     Text("For rent"),
                   ],
                 ),
+                // TODO Add a Slider row for price range of MIN_PRICE to MAX_PRICE
+                // TODO Change the Slider to a RangeSlider
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
-                    Text("${_MIN_PRICE.round()} MFt"),
+                    Text("${MIN_PRICE.round()} MFt"),
                     Expanded(
-                      // TODO Add a Slider for price range of _MIN_PRICE to _MAX_PRICE
-                      // TODO Change the Slider to a RangeSlider
                       child: RangeSlider(
                         values: RangeValues(_minPriceValue, _maxPriceValue),
-                        min: _MIN_PRICE,
-                        max: _MAX_PRICE,
+                        min: MIN_PRICE,
+                        max: MAX_PRICE,
                         divisions: 30,
                         labels: RangeLabels(
-                            "${_minPriceValue.round().toString()} MFt",
-                            "${_maxPriceValue.round().toString()} MFt"),
+                          "${_minPriceValue.round().toString()} MFt",
+                          "${_maxPriceValue.round().toString()} MFt",
+                        ),
                         onChanged: (values) {
                           setMinPriceValue(values.start);
                           setMaxPriceValue(values.end);
                         },
                       ),
                     ),
-                    Text("${_MAX_PRICE.round()} MFt"),
+                    Text("${MAX_PRICE.round()} MFt"),
                   ],
                 ),
                 // TODO Add a Switch row to show or hide the date picker row
@@ -209,8 +207,8 @@ class _RealEstateSearchFormPageState extends State<RealEstateSearchFormPage> {
                           )
                         ],
                       )
-                    : Row(),
-                // TODO Add a RaisedButton with an icon for the search action
+                    : Container(),
+                // TODO Add a RaisedButton having an icon for the search action
                 Row(
                   mainAxisAlignment: MainAxisAlignment.end,
                   children: [

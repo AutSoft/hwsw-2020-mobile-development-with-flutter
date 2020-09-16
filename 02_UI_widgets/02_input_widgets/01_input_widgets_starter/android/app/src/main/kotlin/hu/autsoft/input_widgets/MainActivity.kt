@@ -1,4 +1,4 @@
-package hu.autsoft.flutter_form
+package hu.autsoft.input_widgets
 
 import io.flutter.embedding.android.FlutterActivity
 
