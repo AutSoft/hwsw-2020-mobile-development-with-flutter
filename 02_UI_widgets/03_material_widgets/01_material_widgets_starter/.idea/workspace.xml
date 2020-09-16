@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AndroidLogFilters">
+    <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="Show only selected application" />
+  </component>
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="NONE" />
+  </component>
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:feature" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:feature" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="5e3d6618-3d0e-4d46-b33a-0da6bb423780" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[Pixel_2_API_30]" />
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Dart File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../.." />
+  </component>
+  <component name="GitToolBoxStore">
+    <option name="projectConfigVersion" value="2" />
+  </component>
+  <component name="ProjectId" id="1hNIXGknmdYpUGzvWGOYMqJHMZg" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="DEBUGGABLE_DEVICE" value="Pixel_2_API_30 [emulator-5554]" />
+    <property name="DEBUGGABLE_PROCESS" value="hu.autsoft.material_widgets" />
+    <property name="DEBUGGER_ID" value="Java" />
+    <property name="SHOW_ALL_PROCESSES" value="false" />
+    <property name="SONARLINT_PRECOMMIT_ANALYSIS" value="true" />
+    <property name="dart.analysis.tool.window.force.activate" value="true" />
+    <property name="dart.analysis.tool.window.visible" value="false" />
+    <property name="io.flutter.reload.alreadyRun" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
+    <property name="show.migrate.to.gradle.popup" value="false" />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="5e3d6618-3d0e-4d46-b33a-0da6bb423780" name="Default Changelist" comment="" />
+      <created>1599845161071</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1599845161071</updated>
+    </task>
+    <task id="LOCAL-00001" summary="Update 03_material_widgets projects">
+      <created>1600262707266</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1600262707268</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
+    <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <ignored-roots>
+      <path value="$PROJECT_DIR$/../../../.." />
+    </ignored-roots>
+    <MESSAGE value="Update 03_material_widgets projects" />
+    <option name="LAST_COMMIT_MESSAGE" value="Update 03_material_widgets projects" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="447" y="240" key="#com.intellij.ide.util.MemberChooser" timestamp="1600104869573">
+      <screen x="0" y="0" width="2560" height="1040" />
+    </state>
+    <state x="447" y="240" key="#com.intellij.ide.util.MemberChooser/2560.0.1920.1040/0.0.2560.1040@0.0.2560.1040" timestamp="1600104869573" />
+    <state x="123" y="92" width="2315" height="856" key="AVDManager" timestamp="1600096771072">
+      <screen x="0" y="0" width="2560" height="1040" />
+    </state>
+    <state x="92" y="92" width="1736" height="856" key="AVDManager/0.0.1920.1040@0.0.1920.1040" timestamp="1599950423802" />
+    <state x="123" y="92" width="2315" height="856" key="AVDManager/2560.0.1920.1040/0.0.2560.1040@0.0.2560.1040" timestamp="1600096771072" />
+    <state x="461" y="271" key="AndroidProcessChooserDialog" timestamp="1600100849785">
+      <screen x="0" y="0" width="2560" height="1040" />
+    </state>
+    <state x="461" y="271" key="AndroidProcessChooserDialog/2560.0.1920.1040/0.0.2560.1040@0.0.2560.1040" timestamp="1600100849785" />
+    <state x="1893" y="290" key="CommitChangelistDialog2" timestamp="1600262705712">
+      <screen x="0" y="0" width="3440" height="1400" />
+    </state>
+    <state x="1893" y="290" key="CommitChangelistDialog2/-1920.165.1920.1040/0.0.3440.1400@0.0.3440.1400" timestamp="1600262705712" />
+    <state width="1674" height="186" key="GridCell.Tab.0.bottom" timestamp="1600262779254">
+      <screen x="0" y="0" width="3440" height="1400" />
+    </state>
+    <state width="1674" height="186" key="GridCell.Tab.0.bottom/-1920.165.1920.1040/0.0.3440.1400@0.0.3440.1400" timestamp="1600262779254" />
+    <state width="1207" height="187" key="GridCell.Tab.0.bottom/2560.0.1920.1040/0.0.2560.1040@0.0.2560.1040" timestamp="1600102196586" />
+    <state width="1674" height="186" key="GridCell.Tab.0.center" timestamp="1600262779253">
+      <screen x="0" y="0" width="3440" height="1400" />
+    </state>
+    <state width="1674" height="186" key="GridCell.Tab.0.center/-1920.165.1920.1040/0.0.3440.1400@0.0.3440.1400" timestamp="1600262779253" />
+    <state width="1207" height="187" key="GridCell.Tab.0.center/2560.0.1920.1040/0.0.2560.1040@0.0.2560.1040" timestamp="1600102196584" />
+    <state width="1674" height="186" key="GridCell.Tab.0.left" timestamp="1600262779252">
+      <screen x="0" y="0" width="3440" height="1400" />
+    </state>
+    <state width="1674" height="186" key="GridCell.Tab.0.left/-1920.165.1920.1040/0.0.3440.1400@0.0.3440.1400" timestamp="1600262779252" />
+    <state width="1207" height="187" key="GridCell.Tab.0.left/2560.0.1920.1040/0.0.2560.1040@0.0.2560.1040" timestamp="1600102196584" />
+    <state width="1674" height="186" key="GridCell.Tab.0.right" timestamp="1600262779253">
+      <screen x="0" y="0" width="3440" height="1400" />
+    </state>
+    <state width="1674" height="186" key="GridCell.Tab.0.right/-1920.165.1920.1040/0.0.3440.1400@0.0.3440.1400" timestamp="1600262779253" />
+    <state width="1207" height="187" key="GridCell.Tab.0.right/2560.0.1920.1040/0.0.2560.1040@0.0.2560.1040" timestamp="1600102196586" />
+    <state x="2081" y="348" key="SettingsEditor" timestamp="1600256900322">
+      <screen x="0" y="0" width="3440" height="1400" />
+    </state>
+    <state x="2081" y="348" key="SettingsEditor/-1920.165.1920.1040/0.0.3440.1400@0.0.3440.1400" timestamp="1600256900322" />
+    <state x="2172" y="436" key="Vcs.Push.Dialog.v2" timestamp="1600262734280">
+      <screen x="0" y="0" width="3440" height="1400" />
+    </state>
+    <state x="2172" y="436" key="Vcs.Push.Dialog.v2/-1920.165.1920.1040/0.0.3440.1400@0.0.3440.1400" timestamp="1600262734280" />
+    <state x="1076" y="224" width="585" height="592" key="find.popup" timestamp="1599845244861">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="1076" y="224" width="585" height="592" key="find.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1599845244861" />
+    <state x="616" y="240" width="672" height="677" key="run.anything.popup" timestamp="1600016010977">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="616" y="240" width="672" height="677" key="run.anything.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1600016010977" />
+    <state x="1117" y="303" width="1204" height="913" key="search.everywhere.popup" timestamp="1600256661693">
+      <screen x="0" y="0" width="3440" height="1400" />
+    </state>
+    <state x="1117" y="303" width="1204" height="913" key="search.everywhere.popup/-1920.165.1920.1040/0.0.3440.1400@0.0.3440.1400" timestamp="1600256661693" />
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1600013098930" />
+    <state x="831" y="225" width="896" height="678" key="search.everywhere.popup/2560.0.1920.1040/0.0.2560.1040@0.0.2560.1040" timestamp="1600101395907" />
+  </component>
+</project>
