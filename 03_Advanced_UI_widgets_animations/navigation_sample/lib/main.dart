@@ -34,14 +34,14 @@ class MyApp extends StatelessWidget {
         "/firstpage": (context) => FirstPage(),
         "/secondpage": (context) => SecondPage(),
       },
-      onGenerateRoute: (route) {
+      onGenerateRoute: (route){
         /*switch(route.name){
           case "/parameterpage":
             return MaterialPageRoute(builder: (context) => ParameterPage(parameter: route.arguments.toString(),));
         }*/
         return null;
       },
-      onUnknownRoute: (route) {
+      onUnknownRoute: (route){
         return MaterialPageRoute(builder: (_) => ParameterPage(parameter: route.toString()));
       },
       home: MyMainPage(),
@@ -86,8 +86,8 @@ class MyMainPage extends StatelessWidget {
                 child: Text("Go to first page"),
                 onPressed: () {
                   Navigator.pushNamed(
-                      context,
-                      "/firstpage"
+                    context,
+                    "/firstpage"
                   );
                 },
               ),
@@ -107,8 +107,6 @@ class MyMainPage extends StatelessWidget {
           ),
         ),
       ),
-    )
-    ,
     );
   }
 }
