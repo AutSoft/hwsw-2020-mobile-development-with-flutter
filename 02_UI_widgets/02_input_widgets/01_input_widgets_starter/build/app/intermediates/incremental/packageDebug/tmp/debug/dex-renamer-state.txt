@@ -1,0 +1,4 @@
+#Wed Sep 16 13:21:24 CEST 2020
+base.0=C\:\\Users\\juhos.istvan\\Dropbox\\SoftwareProjects\\AutSoft\\HWSW\\FlutterTanfolyam2020\\02_UI_widgets\\02_input_widgets\\01_input_widgets_starter\\build\\app\\intermediates\\dex\\debug\\mergeDexDebug\\out\\classes.dex
+path.0=classes.dex
+renamed.0=classes.dex

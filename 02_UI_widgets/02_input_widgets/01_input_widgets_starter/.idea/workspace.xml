@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="NONE" />
+  </component>
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:feature" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:feature" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="5ce847f2-c88c-40b5-8efc-fafc4ec6ce59" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[Pixel_2_API_30]" />
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Dart File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../.." />
+  </component>
+  <component name="GitToolBoxStore">
+    <option name="projectConfigVersion" value="2" />
+  </component>
+  <component name="ProjectId" id="1grjHC1G5Cz7zsQ8Vt5TvyfiRvY" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="SONARLINT_PRECOMMIT_ANALYSIS" value="true" />
+    <property name="dart.analysis.tool.window.force.activate" value="true" />
+    <property name="dart.analysis.tool.window.visible" value="false" />
+    <property name="io.flutter.reload.alreadyRun" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../02_flutter_form_complete" />
+    <property name="show.migrate.to.gradle.popup" value="false" />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="5ce847f2-c88c-40b5-8efc-fafc4ec6ce59" name="Default Changelist" comment="" />
+      <created>1598879514509</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1598879514509</updated>
+    </task>
+    <task id="LOCAL-00001" summary="Add flutter_form project">
+      <created>1599729731303</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1599729731304</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Update 02_input_widget projects">
+      <created>1600252033605</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1600252033606</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
+    <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Add flutter_form project" />
+    <MESSAGE value="Update 02_input_widget projects" />
+    <option name="LAST_COMMIT_MESSAGE" value="Update 02_input_widget projects" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="2172" y="344" key="#Plugins" timestamp="1600239269673">
+      <screen x="0" y="0" width="3440" height="1400" />
+    </state>
+    <state x="2172" y="344" key="#Plugins/-1920.165.1920.1040/0.0.3440.1400@0.0.3440.1400" timestamp="1600239269673" />
+    <state x="100" y="100" width="1734" height="1124" key="AVDManager" timestamp="1599728643860">
+      <screen x="0" y="0" width="3440" height="1400" />
+    </state>
+    <state x="100" y="100" width="1734" height="1124" key="AVDManager/-1920.165.1920.1040/0.0.3440.1400@0.0.3440.1400" timestamp="1599728643860" />
+    <state x="228" y="271" key="CommitChangelistDialog2" timestamp="1600252031961">
+      <screen x="0" y="0" width="3440" height="1400" />
+    </state>
+    <state x="228" y="271" key="CommitChangelistDialog2/-1920.165.1920.1040/0.0.3440.1400@0.0.3440.1400" timestamp="1600252031961" />
+    <state x="357" y="339" key="FileChooserDialogImpl" timestamp="1599842491662">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="640" y="457" key="FileChooserDialogImpl/-1920.165.1920.1040/0.0.3440.1400@0.0.3440.1400" timestamp="1599807639987" />
+    <state x="357" y="339" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1599842491662" />
+    <state width="1674" height="390" key="GridCell.Tab.0.bottom" timestamp="1600255629259">
+      <screen x="0" y="0" width="3440" height="1400" />
+    </state>
+    <state width="1674" height="390" key="GridCell.Tab.0.bottom/-1920.165.1920.1040/0.0.3440.1400@0.0.3440.1400" timestamp="1600255629259" />
+    <state width="1874" height="365" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1599842119855" />
+    <state width="2517" height="273" key="GridCell.Tab.0.bottom/4480.0.1920.1040/0.0.2560.1040/2560.0.1920.1040@0.0.2560.1040" timestamp="1598886384272" />
+    <state width="1674" height="390" key="GridCell.Tab.0.center" timestamp="1600255629258">
+      <screen x="0" y="0" width="3440" height="1400" />
+    </state>
+    <state width="1674" height="390" key="GridCell.Tab.0.center/-1920.165.1920.1040/0.0.3440.1400@0.0.3440.1400" timestamp="1600255629258" />
+    <state width="1874" height="365" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1599842119853" />
+    <state width="2517" height="273" key="GridCell.Tab.0.center/4480.0.1920.1040/0.0.2560.1040/2560.0.1920.1040@0.0.2560.1040" timestamp="1598886384271" />
+    <state width="1674" height="390" key="GridCell.Tab.0.left" timestamp="1600255629258">
+      <screen x="0" y="0" width="3440" height="1400" />
+    </state>
+    <state width="1674" height="390" key="GridCell.Tab.0.left/-1920.165.1920.1040/0.0.3440.1400@0.0.3440.1400" timestamp="1600255629258" />
+    <state width="1874" height="365" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1599842119853" />
+    <state width="2517" height="273" key="GridCell.Tab.0.left/4480.0.1920.1040/0.0.2560.1040/2560.0.1920.1040@0.0.2560.1040" timestamp="1598886384271" />
+    <state width="1674" height="390" key="GridCell.Tab.0.right" timestamp="1600255629259">
+      <screen x="0" y="0" width="3440" height="1400" />
+    </state>
+    <state width="1674" height="390" key="GridCell.Tab.0.right/-1920.165.1920.1040/0.0.3440.1400@0.0.3440.1400" timestamp="1600255629259" />
+    <state width="1874" height="365" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1599842119855" />
+    <state width="2517" height="273" key="GridCell.Tab.0.right/4480.0.1920.1040/0.0.2560.1040/2560.0.1920.1040@0.0.2560.1040" timestamp="1598886384272" />
+    <state x="452" y="436" key="Vcs.Push.Dialog.v2" timestamp="1600252054333">
+      <screen x="0" y="0" width="3440" height="1400" />
+    </state>
+    <state x="452" y="436" key="Vcs.Push.Dialog.v2/-1920.165.1920.1040/0.0.3440.1400@0.0.3440.1400" timestamp="1600252054333" />
+    <state x="2395" y="617" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1599572949427">
+      <screen x="0" y="0" width="3440" height="1400" />
+    </state>
+    <state x="2395" y="617" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/-1920.165.1920.1040/0.0.3440.1400@0.0.3440.1400" timestamp="1599572949427" />
+    <state x="987" y="224" width="585" height="592" key="find.popup" timestamp="1598879541200">
+      <screen x="0" y="0" width="2560" height="1040" />
+    </state>
+    <state x="987" y="224" width="585" height="592" key="find.popup/4480.0.1920.1040/0.0.2560.1040/2560.0.1920.1040@0.0.2560.1040" timestamp="1598879541200" />
+    <state x="2243" y="320" width="672" height="678" key="search.everywhere.popup" timestamp="1600239120008">
+      <screen x="0" y="0" width="3440" height="1400" />
+    </state>
+    <state x="2243" y="320" width="672" height="678" key="search.everywhere.popup/-1920.165.1920.1040/0.0.3440.1400@0.0.3440.1400" timestamp="1600239120008" />
+  </component>
+</project>

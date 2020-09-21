@@ -327,7 +327,7 @@ void main() {
 
 [DartPad](https://dartpad.dev/d87cea912ab2be236a30702713ba26b4)
 
-```
+```dart
 import 'dart:math';
 
 int testFunction(){
