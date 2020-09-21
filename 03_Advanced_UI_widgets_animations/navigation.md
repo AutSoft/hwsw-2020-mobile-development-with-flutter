@@ -250,6 +250,69 @@ class GridItemWidget extends StatelessWidget{
 ```
 
 ```dart
+CustomScrollView(
+          physics: AlwaysScrollableScrollPhysics(),
+          slivers: [
+            SliverAppBar(
+              title: Text("Flexible list view"),
+              expandedHeight: 240,
+              flexibleSpace: FlexibleSpaceBar(
+                background: Image.network(
+                  "https://picsum.photos/600/400",
+                  fit: BoxFit.cover,
+                ),
+              ),
+              floating: true,
+              snap: true,
+              pinned: true,
+            ),
+            SliverPadding(
+              padding: EdgeInsets.all(16),
+              sliver: SliverList(
+                delegate: SliverChildListDelegate([
+                  ...Iterable.generate(
+                    10,
+                    (id) {
+                      var item = StockPhoto.fromId(id + startingIndex);
+                      return ListItemWidget(
+                        item: item,
+                      );
+                    },
+                  )
+                ]),
+              ),
+            ),
+            SliverGrid(
+              delegate: SliverChildBuilderDelegate((context, index) {
+                var item = StockPhoto.fromId(index + startingIndex);
+                return GridItemWidget(item: item);
+              }, childCount: 10),
+              gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                crossAxisCount: 2,
+                crossAxisSpacing: 4,
+                mainAxisSpacing: 4,
+              ),
+            )
+          ],
+        ),
+```
+
+```dart
+var startingIndex = 0;
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+        body: Scrollbar(
+          child: RefreshIndicator(
+            onRefresh: () async{
+              setState(() {
+                startingIndex = Random().nextInt(200);
+              });
+            },
+```
+
+```dart
 class _ListItemWidgetState extends State<ListItemWidget> {
   bool liked;
 
@@ -424,4 +487,35 @@ class _LikeButtonState extends State<LikeButton> with SingleTickerProviderStateM
     super.dispose();
   }
 }
+```
+
+```dart
+import 'package:flutter/scheduler.dart' show timeDilation;
+
+void main() {
+  runApp(MyApp());
+  timeDilation = 5.0;
+}
+```
+
+```dart
+AspectRatio(
+            aspectRatio: 600 / 400,
+            child: Hero(
+              tag: photo.id,
+              child: Image.network(
+                photo.url,
+                loadingBuilder: (context, child, loading) {
+                  if (loading == null){
+                    return child;
+                  } else {
+                    return Center(
+                      child: CircularProgressIndicator(),
+                    );
+                  }
+                },
+                fit: BoxFit.cover,
+              ),
+            ),
+          ),
 ```
