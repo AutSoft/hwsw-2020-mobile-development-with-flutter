@@ -1,5 +1,6 @@
 ###Navigator
 
+Alkalmazás kilépés megakadályozása
 ```dart
 return WillPopScope(
   onWillPop: () async {
@@ -27,6 +28,7 @@ return WillPopScope(
 );
 ```
 
+Navigáció példa
 ```dart
   RaisedButton(
 	child: Text("Go to first page"),
@@ -45,6 +47,7 @@ return WillPopScope(
   ),
 ```
 
+Named navigáció
 ```dart
       routes: {
         "/firstpage": (context) => FirstPage(),
@@ -64,6 +67,7 @@ return WillPopScope(
 
 ###Stockphoto
 
+képméret rögzítése
 ```dart
           //TODO: Fix image pop in
           AspectRatio(
@@ -83,6 +87,7 @@ return WillPopScope(
           ),
 ```
 
+Egyedi listaelem létrehozása
 ```dart
 import 'package:flutter/material.dart';
 import 'package:stockphotoapp/photo_data_store.dart';
@@ -119,6 +124,7 @@ class ListItemWidget extends StatelessWidget {
 }
 ```
 
+Lista különböző megoldásai
 ```dart
       /*body: SingleChildScrollView(
         child: Center(
@@ -163,6 +169,7 @@ class ListItemWidget extends StatelessWidget {
       ),
 ```
 
+Grid elem létrehozása
 ```dart
 class GridItemWidget extends StatelessWidget{
   final StockPhoto item;
@@ -197,6 +204,7 @@ class GridItemWidget extends StatelessWidget{
 }
 ```
 
+Grid különböző megoldásai
 ```dart
       /*body: GridView.count(
         crossAxisCount: 3,
@@ -249,6 +257,7 @@ class GridItemWidget extends StatelessWidget{
       ),
 ```
 
+sliverek
 ```dart
 CustomScrollView(
           physics: AlwaysScrollableScrollPhysics(),
@@ -297,6 +306,7 @@ CustomScrollView(
         ),
 ```
 
+lista frissítés
 ```dart
 var startingIndex = 0;
 
@@ -312,6 +322,7 @@ var startingIndex = 0;
             },
 ```
 
+Like funkció implementálás, szín animáció
 ```dart
 class _ListItemWidgetState extends State<ListItemWidget> {
   bool liked;
@@ -370,6 +381,7 @@ class _ListItemWidgetState extends State<ListItemWidget> {
 }
 ```
 
+Forgatásra implicit widget
 ```dart
 child: AnimatedRotation(
             duration: Duration(seconds: 2),
@@ -417,6 +429,7 @@ class _AnimatedRotationState extends AnimatedWidgetBaseState<AnimatedRotation> {
 }
 ```
 
+beágyazott saját implicit animáció
 ```dart
           child: TweenAnimationBuilder(
             tween: Tween<double>(begin: 1, end: liked == null ? 1 : (liked ? 0 : 2)),
@@ -441,6 +454,7 @@ class _AnimatedRotationState extends AnimatedWidgetBaseState<AnimatedRotation> {
           ),
 ```
 
+Saját animáció létrehozása
 ```dart
 class LikeButton extends StatefulWidget{
   @override
@@ -489,6 +503,7 @@ class _LikeButtonState extends State<LikeButton> with SingleTickerProviderStateM
 }
 ```
 
+Animációk lassítása
 ```dart
 import 'package:flutter/scheduler.dart' show timeDilation;
 
@@ -498,6 +513,7 @@ void main() {
 }
 ```
 
+Hero animáció
 ```dart
 AspectRatio(
             aspectRatio: 600 / 400,
@@ -518,4 +534,40 @@ AspectRatio(
               ),
             ),
           ),
+```
+
+Material animation
+```dart
+ @override
+  Widget build(BuildContext context) {
+    return OpenContainer(
+      closedBuilder: (BuildContext context, void Function() action) {
+        return GridTile(
+          child: Stack(
+            children: [
+              Positioned.fill(
+                child: Hero(
+                  tag: item.id,
+                  child: Image.network(
+                    item.url,
+                    fit: BoxFit.cover,
+                  ),
+                ),
+              ),
+              Positioned.fill(
+                child: Material(
+                  color: Colors.transparent,
+                  child: InkWell(
+                    onTap: action
+                  ),
+                ),
+              ),
+            ],
+          ),
+        );
+      },
+      openBuilder: (BuildContext context, void Function({Object returnValue}) action) {
+        return DetailedPage(photo: item,);
+      },
+    );
 ```
