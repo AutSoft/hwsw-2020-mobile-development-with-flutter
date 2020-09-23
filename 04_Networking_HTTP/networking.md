@@ -113,8 +113,9 @@ class _CityListPageState extends State<CityListPage> {
     );
   }
 }
+```
 
-```dart
+```yml
 dependencies:
   flutter:
     sdk: flutter
