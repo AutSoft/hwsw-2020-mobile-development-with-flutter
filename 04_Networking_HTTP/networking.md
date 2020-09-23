@@ -132,11 +132,8 @@ dependencies:
 dev_dependencies:
   flutter_test:
     sdk: flutter
-  build_runner: ^1.10.2
+  build_runner: ^1.10.1
   json_serializable: ^3.4.1
-  
-dependency_overrides:
-  analyzer: '0.39.14'
 ```
 
 ```dart
