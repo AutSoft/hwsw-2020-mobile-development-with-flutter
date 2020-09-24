@@ -1,7 +1,7 @@
-import 'package:awesome_todo_app_starter/data/database/data_source.dart';
-import 'package:awesome_todo_app_starter/data/model/todo.dart';
-import 'package:awesome_todo_app_starter/ui/details/todo_details.dart';
-import 'package:awesome_todo_app_starter/ui/list/todo_list_item.dart';
+import 'package:awesome_todo_app/data/database/data_source.dart';
+import 'package:awesome_todo_app/data/model/todo.dart';
+import 'package:awesome_todo_app/ui/details/todo_details.dart';
+import 'package:awesome_todo_app/ui/list/todo_list_item.dart';
 import 'package:flutter/material.dart';
 
 class TodoListPage extends StatefulWidget {

@@ -1,4 +1,4 @@
-package hu.autsoft.awesome_todo_app_final
+package hu.autsoft.awesome_todo_app
 
 import io.flutter.embedding.android.FlutterActivity
 

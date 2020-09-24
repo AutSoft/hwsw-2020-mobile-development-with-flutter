@@ -1,6 +1,7 @@
-import 'package:awesome_todo_app_starter/data/database/data_source.dart';
-import 'package:awesome_todo_app_starter/data/database/memory/memory_todo_database.dart';
 import 'package:flutter/widgets.dart';
+
+import 'database/data_source.dart';
+import 'database/memory/memory_todo_database.dart';
 
 class DataSourceProvider extends InheritedWidget {
   //region Constructor

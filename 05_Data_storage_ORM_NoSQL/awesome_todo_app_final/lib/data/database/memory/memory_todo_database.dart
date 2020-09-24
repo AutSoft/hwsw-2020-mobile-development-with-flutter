@@ -1,6 +1,6 @@
-import 'package:awesome_todo_app_starter/data/database/todo_database.dart';
-import 'package:awesome_todo_app_starter/data/model/todo.dart';
-import 'package:awesome_todo_app_starter/data/model/todo_priority.dart';
+import 'package:awesome_todo_app/data/database/todo_database.dart';
+import 'package:awesome_todo_app/data/model/todo.dart';
+import 'package:awesome_todo_app/data/model/todo_priority.dart';
 
 class MemoryTodoDatabase implements TodoDatabase {
   final List<Todo> todos = [

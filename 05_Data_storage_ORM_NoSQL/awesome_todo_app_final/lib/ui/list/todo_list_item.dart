@@ -1,5 +1,5 @@
-import 'package:awesome_todo_app_starter/data/model/todo.dart';
-import 'package:awesome_todo_app_starter/data/model/todo_priority.dart';
+import 'package:awesome_todo_app/data/model/todo.dart';
+import 'package:awesome_todo_app/data/model/todo_priority.dart';
 import 'package:flutter/material.dart';
 
 class TodoListItem extends StatelessWidget {

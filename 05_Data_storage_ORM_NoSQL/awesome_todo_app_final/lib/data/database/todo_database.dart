@@ -1,4 +1,5 @@
-import 'package:awesome_todo_app_starter/data/model/todo.dart';
+
+import 'package:awesome_todo_app/data/model/todo.dart';
 
 abstract class TodoDatabase {
   Future<List<Todo>> getAllTodos();

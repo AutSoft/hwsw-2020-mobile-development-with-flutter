@@ -1,6 +1,5 @@
-import 'package:awesome_todo_app_starter/data/database/todo_database.dart';
-
 import '../model/todo.dart';
+import 'todo_database.dart';
 
 class DataSource {
   final TodoDatabase database;
