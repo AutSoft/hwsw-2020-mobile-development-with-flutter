@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:awesome_todo_app/data/database/todo_database.dart';
 import 'package:awesome_todo_app/data/model/todo.dart';
 import 'package:awesome_todo_app/data/model/todo_priority.dart';
@@ -54,6 +56,9 @@ class MemoryTodoDatabase implements TodoDatabase {
     return Future(() {
       final index = todos.indexWhere((element) => element.id == todo.id);
       if (index == -1) {
+        if (todo.id == 0 || todo.id == null) {
+          todo.id = todos.map((element) => element.id).toList().reduce(max) + 1;
+        }
         todos.add(todo);
         return;
       } else {

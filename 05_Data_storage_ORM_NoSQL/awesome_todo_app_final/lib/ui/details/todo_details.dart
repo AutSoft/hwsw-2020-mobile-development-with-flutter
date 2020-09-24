@@ -1,6 +1,7 @@
 import 'package:awesome_todo_app/data/database/data_source.dart';
 import 'package:awesome_todo_app/data/model/todo.dart';
 import 'package:awesome_todo_app/ui/list/todo_list_item.dart';
+import 'package:awesome_todo_app/util.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 
@@ -68,7 +69,7 @@ class _TodoDetailsState extends State<TodoDetails> {
                   ),
                   TodoDataRow(
                     rowTitle: "Due date",
-                    rowData: DateFormat("yyyy.MM.dd.").format(todo.dueDate),
+                    rowData: getFormattedDate(todo.dueDate),
                   ),
                 ],
               );
@@ -103,25 +104,3 @@ class TodoDataRow extends StatelessWidget {
     );
   }
 }
-
-/*DropdownButton(
-value: todo.priority,
-onChanged: (todoPriority) => _setTodoPriority(todoPriority),
-items: [
-DropdownMenuItem(
-onTap: () {},
-value: TodoPriority.LOW,
-child: Text("LOW"),
-),
-DropdownMenuItem(
-onTap: () {},
-value: TodoPriority.NORMAL,
-child: Text("NORMAL"),
-),
-DropdownMenuItem(
-onTap: () {},
-value: TodoPriority.HIGH,
-child: Text("HIGH"),
-),
-],
-)*/

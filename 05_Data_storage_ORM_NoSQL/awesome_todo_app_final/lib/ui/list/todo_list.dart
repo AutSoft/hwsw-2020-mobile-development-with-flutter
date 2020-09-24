@@ -2,6 +2,7 @@ import 'package:awesome_todo_app/data/database/data_source.dart';
 import 'package:awesome_todo_app/data/model/todo.dart';
 import 'package:awesome_todo_app/ui/details/todo_details.dart';
 import 'package:awesome_todo_app/ui/list/todo_list_item.dart';
+import 'package:awesome_todo_app/ui/newtodo/add_todo.dart';
 import 'package:flutter/material.dart';
 
 class TodoListPage extends StatefulWidget {
@@ -27,13 +28,17 @@ class _TodoListPageState extends State<TodoListPage> {
 
   void onDoneChanged(int id, bool isDone) async {
     await _todosDataSource.setTodoDone(id, isDone);
+    refreshTodos();
+  }
+
+  void onDeletePressed(int id) async {
+    await _todosDataSource.deleteTodo(id);
     setState(() {
       _todosFuture = _todosDataSource.getAllTodos();
     });
   }
 
-  void onDeletePressed(int id) async {
-    await _todosDataSource.deleteTodo(id);
+  void refreshTodos() {
     setState(() {
       _todosFuture = _todosDataSource.getAllTodos();
     });
@@ -62,10 +67,9 @@ class _TodoListPageState extends State<TodoListPage> {
                   return TodoListItem(
                     asyncSnapshot.data[index],
                     onTap: (id) {
-                      Navigator.of(context).push(
-                          MaterialPageRoute(builder: (context) =>
-                              TodoDetails(_todosDataSource, id))
-                      );
+                      Navigator.of(context).push(MaterialPageRoute(
+                          builder: (context) =>
+                              TodoDetails(_todosDataSource, id)));
                     },
                     onDoneChanged: (id, isDone) => onDoneChanged(id, isDone),
                     onDeletePressed: (id) => onDeletePressed(id),
@@ -80,11 +84,13 @@ class _TodoListPageState extends State<TodoListPage> {
           }),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
-          Navigator.of(context).push(
-            MaterialPageRoute(
-              // builder: (_) => TodoDetails(),
-            ),
-          );
+          Navigator.of(context)
+              .push(
+                MaterialPageRoute(
+                  builder: (_) => AddTodoPage(_todosDataSource),
+                ),
+              )
+              .then((value) => refreshTodos());
         },
         tooltip: 'New Todo',
         child: Icon(Icons.add),
