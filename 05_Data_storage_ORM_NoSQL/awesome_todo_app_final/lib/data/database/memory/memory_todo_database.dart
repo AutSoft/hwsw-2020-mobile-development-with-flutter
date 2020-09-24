@@ -25,7 +25,7 @@ class MemoryTodoDatabase implements TodoDatabase {
       title: "Have fun learning! :)",
       dueDate: DateTime(2020, 9, 28),
       isDone: false,
-      description: "",
+      description: "Don't forget to ask questions!",
       priority: TodoPriority.HIGH,
     )
   ];

@@ -23,8 +23,8 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  intl: ^0.16.1
 
-#  copy_with_extension: ">=1.0.0 <2.0.0"
   shared_preferences: '>=0.5.12 <2.0.0'
   floor: ^0.14.0
   moor: ^3.3.1
