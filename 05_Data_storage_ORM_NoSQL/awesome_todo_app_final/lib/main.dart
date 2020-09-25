@@ -1,7 +1,7 @@
 import 'package:awesome_todo_app/data/database/data_source.dart';
 import 'package:flutter/material.dart';
 
-import 'data/database/floor/floor_todo_repository.dart';
+import 'data/database/moor/moor_todo_repository.dart';
 import 'data/datasource_provider.dart';
 import 'ui/list/todo_list.dart';
 
@@ -10,8 +10,8 @@ void main() async {
 
   final dataSource = DataSource(
     // MemoryTodoRepository(),
-    FloorTodoRepository()
-    // MoorTodoRepository()
+    // FloorTodoRepository()
+    MoorTodoRepository()
     // SembastTodoRepository()
     // HiveTodoRepository()
   );
