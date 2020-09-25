@@ -1,8 +1,12 @@
+import 'package:awesome_todo_app/data/database/floor/floor_todo.dart';
+import 'package:awesome_todo_app/domain/model/todo_priority.dart';
+import 'package:awesome_todo_app/util.dart';
+
 import '../../domain/model/todo.dart';
 import 'todo_repository.dart';
 
 class DataSource {
-  final TodoRepository<Todo> database;
+  final TodoRepository<FloorTodo> database;
 
   DataSource(this.database);
 
@@ -11,30 +15,67 @@ class DataSource {
   }
 
   Future<List<Todo>> getAllTodos() async {
-    return database.getAllTodos();
+    final todos = await database.getAllTodos();
+    return todos
+        .map(
+          (floorTodo) => floorTodo.toTodo(),
+        )
+        .toList();
   }
 
   Future<Todo> getTodo(int id) async {
-    return database.getTodo(id);
+    final floorTodo = await database.getTodo(id);
+    return floorTodo.toTodo();
   }
 
   Future<void> upsertTodo(Todo todo) async {
-    return database.upsertTodo(todo);
+    return database.upsertTodo(todo.toFloorTodo());
   }
 
   Future<void> deleteTodo(Todo todo) async {
-    return database.deleteTodo(todo);
+    return database.deleteTodo(todo.toFloorTodo());
   }
 
   Future<void> setTodoDone(Todo todo, bool isDone) async {
-    Todo newTodo = Todo(
-      id: todo.id,
-      title: todo.title,
-      dueDate: todo.dueDate,
-      isDone: isDone,
-      description: todo.description,
-      priority: todo.priority
-    );
-    return database.upsertTodo(newTodo);
+    return database.upsertTodo(todo.toFloorTodo()..isDone = isDone ? 1 : 0);
+  }
+}
+
+extension TodoToFloorTodo on Todo {
+  FloorTodo toFloorTodo() {
+    return FloorTodo(
+        id: this.id,
+        title: this.title,
+        description: this.description,
+        priority: this.priority.index,
+        isDone: this.isDone ? 1 : 0,
+        dueDate: getFormattedDate(this.dueDate));
+  }
+}
+
+extension FloorTodoToTodo on FloorTodo {
+  Todo toTodo() {
+    TodoPriority priority;
+    switch (this.priority) {
+      case 0:
+        priority = TodoPriority.LOW;
+        break;
+      case 1:
+        priority = TodoPriority.NORMAL;
+        break;
+      case 2:
+        priority = TodoPriority.HIGH;
+        break;
+      default:
+        throw ArgumentError(
+            "Invalid Todo priority encountered while mapping database object to domain object");
+    }
+    return Todo(
+        id: this.id,
+        title: this.title,
+        description: this.description,
+        priority: priority,
+        isDone: this.isDone == 1 ? true : false,
+        dueDate: parseDate(this.dueDate));
   }
 }
