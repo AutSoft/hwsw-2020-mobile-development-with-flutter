@@ -10,7 +10,7 @@ class FloorTodoRepository implements TodoRepository<FloorTodo> {
   @override
   Future<void> init() async {
     final database = await $FloorFloorTodoDatabase
-        .databaseBuilder("todo_database.db")
+        .databaseBuilder("floor_todo.db")
         .build();
     todoDao = database.todoDao;
   }

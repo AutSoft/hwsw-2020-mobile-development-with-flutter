@@ -13,6 +13,6 @@ abstract class FloorTodoDao {
   @Query("DELETE FROM todo WHERE id = :id")
   Future<void> deleteTodo(int id);
 
-  @Update(onConflict: OnConflictStrategy.replace)
+  @Insert(onConflict: OnConflictStrategy.replace)
   Future<void> upsertTodo(FloorTodo todo);
 }

@@ -56,7 +56,7 @@ class _TodoListPageState extends State<TodoListPage> {
             if (asyncSnapshot.hasError) {
               return Center(
                 child: Text(
-                    "Oh no, something went wrong while loading the Todo list. :("),
+                    "Oh no, something went wrong while loading the Todo list. :( reason: ${asyncSnapshot.error}"),
               );
             }
 

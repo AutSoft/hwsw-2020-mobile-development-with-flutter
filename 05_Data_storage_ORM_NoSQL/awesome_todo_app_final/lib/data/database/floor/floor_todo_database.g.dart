@@ -80,7 +80,7 @@ class _$FloorTodoDatabase extends FloorTodoDatabase {
       },
       onCreate: (database, version) async {
         await database.execute(
-            'CREATE TABLE IF NOT EXISTS `todo` (`id` INTEGER, `title` TEXT, `dueDate` TEXT, `isDone` INTEGER, `description` TEXT, `priority` INTEGER, PRIMARY KEY (`id`))');
+            'CREATE TABLE IF NOT EXISTS `todo` (`id` INTEGER PRIMARY KEY AUTOINCREMENT, `title` TEXT, `dueDate` TEXT, `isDone` INTEGER, `description` TEXT, `priority` INTEGER)');
 
         await callback?.onCreate?.call(database, version);
       },
@@ -97,15 +97,14 @@ class _$FloorTodoDatabase extends FloorTodoDatabase {
 class _$FloorTodoDao extends FloorTodoDao {
   _$FloorTodoDao(this.database, this.changeListener)
       : _queryAdapter = QueryAdapter(database),
-        _floorTodoUpdateAdapter = UpdateAdapter(
+        _floorTodoInsertionAdapter = InsertionAdapter(
             database,
             'todo',
-            ['id'],
             (FloorTodo item) => <String, dynamic>{
                   'id': item.id,
                   'title': item.title,
                   'dueDate': item.dueDate,
-                  'isDone': item.isDone == null ? null : (item.isDone ? 1 : 0),
+                  'isDone': item.isDone,
                   'description': item.description,
                   'priority': item.priority
                 });
@@ -120,11 +119,11 @@ class _$FloorTodoDao extends FloorTodoDao {
       id: row['id'] as int,
       title: row['title'] as String,
       dueDate: row['dueDate'] as String,
-      isDone: row['isDone'] == null ? null : (row['isDone'] as int) != 0,
+      isDone: row['isDone'] as int,
       description: row['description'] as String,
       priority: row['priority'] as int);
 
-  final UpdateAdapter<FloorTodo> _floorTodoUpdateAdapter;
+  final InsertionAdapter<FloorTodo> _floorTodoInsertionAdapter;
 
   @override
   Future<List<FloorTodo>> getAllTodos() async {
@@ -145,6 +144,6 @@ class _$FloorTodoDao extends FloorTodoDao {
 
   @override
   Future<void> upsertTodo(FloorTodo todo) async {
-    await _floorTodoUpdateAdapter.update(todo, OnConflictStrategy.replace);
+    await _floorTodoInsertionAdapter.insert(todo, OnConflictStrategy.replace);
   }
 }
