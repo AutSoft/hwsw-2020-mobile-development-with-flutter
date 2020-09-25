@@ -27,6 +27,14 @@ class DataSource {
   }
 
   Future<void> setTodoDone(Todo todo, bool isDone) async {
-    return database.setTodoDone(todo, isDone);
+    Todo newTodo = Todo(
+      id: todo.id,
+      title: todo.title,
+      dueDate: todo.dueDate,
+      isDone: isDone,
+      description: todo.description,
+      priority: todo.priority
+    );
+    return database.upsertTodo(todo);
   }
 }

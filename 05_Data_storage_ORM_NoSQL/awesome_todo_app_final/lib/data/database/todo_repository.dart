@@ -8,6 +8,4 @@ abstract class TodoRepository<T> {
   Future<void> upsertTodo(T todo);
 
   Future<void> deleteTodo(T todo);
-
-  Future<void> setTodoDone(T todo, bool isDone);
 }

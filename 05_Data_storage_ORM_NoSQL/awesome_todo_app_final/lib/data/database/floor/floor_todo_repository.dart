@@ -1,42 +1,37 @@
+import 'package:awesome_todo_app/data/database/floor/floor_todo_database.dart';
 import 'package:awesome_todo_app/data/database/todo_repository.dart';
 
 import 'floor_todo.dart';
+import 'floor_todo_dao.dart';
 
 class FloorTodoRepository implements TodoRepository<FloorTodo> {
+  FloorTodoDao todoDao;
 
   @override
   Future<void> init() async {
-    // TODO: implement init
-    throw UnimplementedError();
+    final database = await $FloorFloorTodoDatabase
+        .databaseBuilder("todo_database.db")
+        .build();
+    todoDao = database.todoDao;
   }
 
   @override
   Future<List<FloorTodo>> getAllTodos() {
-    // TODO: implement getAllTodos
-    throw UnimplementedError();
+    return todoDao.getAllTodos();
   }
 
   @override
   Future<FloorTodo> getTodo(int id) {
-    // TODO: implement getTodo
-    throw UnimplementedError();
-  }
-
-  @override
-  Future<void> setTodoDone(FloorTodo todo, bool isDone) {
-    // TODO: implement setTodoDone
-    throw UnimplementedError();
+    return todoDao.getTodo(id);
   }
 
   @override
   Future<void> deleteTodo(FloorTodo todo) {
-    // TODO: implement deleteTodo
-    throw UnimplementedError();
+    return todoDao.deleteTodo(todo.id);
   }
 
   @override
   Future<void> upsertTodo(FloorTodo todo) {
-    // TODO: implement upsertTodo
-    throw UnimplementedError();
+    return todoDao.upsertTodo(todo);
   }
 }

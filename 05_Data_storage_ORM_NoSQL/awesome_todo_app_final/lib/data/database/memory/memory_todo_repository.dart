@@ -69,16 +69,4 @@ class MemoryTodoRepository implements TodoRepository<Todo> {
       }
     });
   }
-
-  @override
-  Future<void> setTodoDone(Todo todo, bool isDone) {
-    return Future(() {
-      final index = todos.indexWhere((element) => element.id == todo.id);
-      if (index == -1) {
-        return;
-      } else {
-        todos[index].isDone = isDone;
-      }
-    });
-  }
 }
