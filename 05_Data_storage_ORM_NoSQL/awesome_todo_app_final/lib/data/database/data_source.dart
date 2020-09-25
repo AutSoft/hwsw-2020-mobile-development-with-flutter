@@ -1,4 +1,4 @@
-import '../model/todo.dart';
+import '../../domain/model/todo.dart';
 import 'todo_database.dart';
 
 class DataSource {
@@ -6,7 +6,7 @@ class DataSource {
 
   DataSource(this.database);
 
-  Future<void> upsertTodo(Todo todo) {
+  Future<void> upsertTodo(Todo todo) async {
     // TODO Map the domain representation to the DB representation
    return database.upsertTodo(todo);
   }
@@ -25,7 +25,7 @@ class DataSource {
     return database.getAllTodos();
   }
 
-  Future<void> setTodoDone(int id, bool isDone){
+  Future<void> setTodoDone(int id, bool isDone) async {
     return database.setTodoDone(id, isDone);
   }
 }

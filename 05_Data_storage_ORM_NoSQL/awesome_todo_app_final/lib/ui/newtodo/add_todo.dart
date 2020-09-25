@@ -1,7 +1,7 @@
-import 'package:awesome_todo_app/data/model/todo_priority.dart';
+import 'package:awesome_todo_app/domain/model/todo.dart';
+import 'package:awesome_todo_app/domain/model/todo_priority.dart';
 import 'package:awesome_todo_app/util.dart';
 import 'package:awesome_todo_app/data/database/data_source.dart';
-import 'package:awesome_todo_app/data/model/todo.dart';
 import 'package:flutter/material.dart';
 
 class AddTodoPage extends StatefulWidget {

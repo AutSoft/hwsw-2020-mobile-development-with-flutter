@@ -1,5 +1,5 @@
 import 'package:awesome_todo_app/data/database/data_source.dart';
-import 'package:awesome_todo_app/data/model/todo.dart';
+import 'package:awesome_todo_app/domain/model/todo.dart';
 import 'package:awesome_todo_app/ui/details/todo_details.dart';
 import 'package:awesome_todo_app/ui/list/todo_list_item.dart';
 import 'package:awesome_todo_app/ui/newtodo/add_todo.dart';

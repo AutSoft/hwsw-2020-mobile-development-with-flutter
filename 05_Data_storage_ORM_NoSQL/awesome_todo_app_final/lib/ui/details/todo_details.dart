@@ -1,9 +1,8 @@
 import 'package:awesome_todo_app/data/database/data_source.dart';
-import 'package:awesome_todo_app/data/model/todo.dart';
+import 'package:awesome_todo_app/domain/model/todo.dart';
 import 'package:awesome_todo_app/ui/list/todo_list_item.dart';
 import 'package:awesome_todo_app/util.dart';
 import 'package:flutter/material.dart';
-import 'package:intl/intl.dart';
 
 class TodoDetails extends StatefulWidget {
   final DataSource dataSource;

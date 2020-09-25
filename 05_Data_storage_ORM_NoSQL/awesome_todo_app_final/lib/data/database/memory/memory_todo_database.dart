@@ -1,8 +1,8 @@
 import 'dart:math';
 
 import 'package:awesome_todo_app/data/database/todo_database.dart';
-import 'package:awesome_todo_app/data/model/todo.dart';
-import 'package:awesome_todo_app/data/model/todo_priority.dart';
+import 'package:awesome_todo_app/domain/model/todo.dart';
+import 'package:awesome_todo_app/domain/model/todo_priority.dart';
 
 class MemoryTodoDatabase implements TodoDatabase<Todo> {
   final List<Todo> todos = [

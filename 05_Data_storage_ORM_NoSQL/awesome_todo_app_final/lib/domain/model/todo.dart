@@ -1,5 +1,4 @@
-import 'package:awesome_todo_app/data/model/todo_priority.dart';
-import 'package:flutter/foundation.dart';
+import 'package:awesome_todo_app/domain/model/todo_priority.dart';
 
 class Todo {
   int id;
