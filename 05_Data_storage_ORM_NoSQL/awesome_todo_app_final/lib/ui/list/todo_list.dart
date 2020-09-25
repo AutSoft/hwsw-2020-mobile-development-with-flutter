@@ -26,13 +26,13 @@ class _TodoListPageState extends State<TodoListPage> {
     super.initState();
   }
 
-  void onDoneChanged(int id, bool isDone) async {
-    await _todosDataSource.setTodoDone(id, isDone);
+  void onDoneChanged(Todo todo, bool isDone) async {
+    await _todosDataSource.setTodoDone(todo, isDone);
     refreshTodos();
   }
 
-  void onDeletePressed(int id) async {
-    await _todosDataSource.deleteTodo(id);
+  void onDeletePressed(Todo todo) async {
+    await _todosDataSource.deleteTodo(todo);
     setState(() {
       _todosFuture = _todosDataSource.getAllTodos();
     });
@@ -66,13 +66,13 @@ class _TodoListPageState extends State<TodoListPage> {
                 itemBuilder: (context, index) {
                   return TodoListItem(
                     asyncSnapshot.data[index],
-                    onTap: (id) {
+                    onTap: (todo) {
                       Navigator.of(context).push(MaterialPageRoute(
                           builder: (context) =>
-                              TodoDetails(_todosDataSource, id)));
+                              TodoDetails(_todosDataSource, todo.id)));
                     },
-                    onDoneChanged: (id, isDone) => onDoneChanged(id, isDone),
-                    onDeletePressed: (id) => onDeletePressed(id),
+                    onDoneChanged: (todo, isDone) => onDoneChanged(todo, isDone),
+                    onDeletePressed: (todo) => onDeletePressed(todo),
                   );
                 },
               );

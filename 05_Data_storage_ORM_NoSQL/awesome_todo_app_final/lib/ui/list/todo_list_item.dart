@@ -4,9 +4,9 @@ import 'package:flutter/material.dart';
 
 class TodoListItem extends StatelessWidget {
   final Todo todo;
-  final Function(int id) onTap;
-  final Function(int id, bool isDone) onDoneChanged;
-  final Function(int id) onDeletePressed;
+  final Function(Todo todo) onTap;
+  final Function(Todo todo, bool isDone) onDoneChanged;
+  final Function(Todo todo) onDeletePressed;
 
   TodoListItem(
     this.todo, {
@@ -18,7 +18,7 @@ class TodoListItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      onTap: () => onTap(todo.id),
+      onTap: () => onTap(todo),
       child: Row(
         children: [
           Padding(
@@ -27,7 +27,7 @@ class TodoListItem extends StatelessWidget {
           ),
           Checkbox(
             value: todo.isDone,
-            onChanged: (isDone) => onDoneChanged(todo.id, isDone),
+            onChanged: (isDone) => onDoneChanged(todo, isDone),
           ),
           Expanded(
             child: Padding(
@@ -45,7 +45,7 @@ class TodoListItem extends StatelessWidget {
               Icons.delete,
               color: Colors.grey,
             ),
-            onPressed: () => onDeletePressed(todo.id),
+            onPressed: () => onDeletePressed(todo),
           ),
         ],
       ),

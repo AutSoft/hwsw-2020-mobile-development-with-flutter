@@ -1,27 +1,32 @@
+import 'package:awesome_todo_app/data/database/data_source.dart';
 import 'package:flutter/material.dart';
 
+import 'data/database/memory/memory_todo_repository.dart';
 import 'data/datasource_provider.dart';
 import 'ui/list/todo_list.dart';
 
-void main() {
-  runApp(AwesomeTodoApp());
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+
+  final dataSource = DataSource(
+    MemoryTodoRepository(),
+    // FloorTodoDatabase()
+    // MoorTodoDatabase()
+    // SembastTodoDatabase()
+    // HiveTodoDatabase()
+  );
+
+  await dataSource.init();
+
+  runApp(
+    DataSourceProvider(
+      dataSource: dataSource,
+      child: AwesomeTodoApp(),
+    ),
+  );
 }
 
 class AwesomeTodoApp extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return DataSourceProvider(
-      child: AppDependencyProvider()
-    );
-  }
-}
-
-class AppDependencyProvider extends StatefulWidget {
-  @override
-  _AppDependencyProviderState createState() => _AppDependencyProviderState();
-}
-
-class _AppDependencyProviderState extends State<AppDependencyProvider> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -36,6 +41,3 @@ class _AppDependencyProviderState extends State<AppDependencyProvider> {
     );
   }
 }
-
-
-

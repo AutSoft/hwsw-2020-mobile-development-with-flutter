@@ -1,10 +1,10 @@
 import 'dart:math';
 
-import 'package:awesome_todo_app/data/database/todo_database.dart';
+import 'package:awesome_todo_app/data/database/todo_repository.dart';
 import 'package:awesome_todo_app/domain/model/todo.dart';
 import 'package:awesome_todo_app/domain/model/todo_priority.dart';
 
-class MemoryTodoDatabase implements TodoDatabase<Todo> {
+class MemoryTodoRepository implements TodoRepository<Todo> {
   final List<Todo> todos = [
     Todo(
       id: 0,
@@ -33,9 +33,12 @@ class MemoryTodoDatabase implements TodoDatabase<Todo> {
   ];
 
   @override
-  Future<void> deleteTodo(int id) {
+  Future<void> init() async {}
+
+  @override
+  Future<void> deleteTodo(Todo todo) {
     return Future(() {
-      todos.removeWhere((element) => element.id == id);
+      todos.removeWhere((element) => element.id == todo.id);
     });
   }
 
@@ -68,9 +71,9 @@ class MemoryTodoDatabase implements TodoDatabase<Todo> {
   }
 
   @override
-  Future<void> setTodoDone(int id, bool isDone) {
+  Future<void> setTodoDone(Todo todo, bool isDone) {
     return Future(() {
-      final index = todos.indexWhere((element) => element.id == id);
+      final index = todos.indexWhere((element) => element.id == todo.id);
       if (index == -1) {
         return;
       } else {
