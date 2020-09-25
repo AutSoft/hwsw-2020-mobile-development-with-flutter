@@ -1,12 +1,12 @@
 
 import 'package:awesome_todo_app/data/model/todo.dart';
 
-abstract class TodoDatabase {
-  Future<List<Todo>> getAllTodos();
+abstract class TodoDatabase<T> {
+  Future<List<T>> getAllTodos();
 
-  Future<Todo> getTodo(int id);
+  Future<T> getTodo(int id);
 
-  Future upsertTodo(Todo todo);
+  Future upsertTodo(T todo);
 
   Future deleteTodo(int id);
 

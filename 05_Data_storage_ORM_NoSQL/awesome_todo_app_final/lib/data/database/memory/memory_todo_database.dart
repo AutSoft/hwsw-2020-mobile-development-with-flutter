@@ -4,7 +4,7 @@ import 'package:awesome_todo_app/data/database/todo_database.dart';
 import 'package:awesome_todo_app/data/model/todo.dart';
 import 'package:awesome_todo_app/data/model/todo_priority.dart';
 
-class MemoryTodoDatabase implements TodoDatabase {
+class MemoryTodoDatabase implements TodoDatabase<Todo> {
   final List<Todo> todos = [
     Todo(
       id: 0,

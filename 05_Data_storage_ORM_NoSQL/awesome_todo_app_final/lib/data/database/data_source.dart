@@ -7,6 +7,7 @@ class DataSource {
   DataSource(this.database);
 
   Future<void> upsertTodo(Todo todo) {
+    // TODO Map the domain representation to the DB representation
    return database.upsertTodo(todo);
   }
 
@@ -15,10 +16,12 @@ class DataSource {
   }
 
   Future<Todo> getTodo(int id) async {
+    // TODO Map the the DB representation to the domain representation
     return database.getTodo(id);
   }
 
   Future<List<Todo>> getAllTodos() async {
+    // TODO Map the DB Todos to domain Todos
     return database.getAllTodos();
   }
 
