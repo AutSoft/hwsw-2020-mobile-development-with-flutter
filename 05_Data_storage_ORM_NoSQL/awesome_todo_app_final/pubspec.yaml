@@ -26,6 +26,7 @@ dependencies:
   intl: ^0.16.1
 
   shared_preferences: '>=0.5.12 <2.0.0'
+  path_provider: ^1.6.18
   floor: ^0.14.0
   moor: ^3.3.1
   sqlite3_flutter_libs: ^0.2.0
