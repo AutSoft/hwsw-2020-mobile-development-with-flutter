@@ -101,7 +101,7 @@ class _AddTodoPageState extends State<AddTodoPage> {
                 children: [
                   Padding(
                     padding: EdgeInsets.only(right: 4),
-                    child: Text("Soonest moving in date:"),
+                    child: Text("Due date:"),
                   ),
                   Text(getFormattedDate(dueDate)),
                   FlatButton(
@@ -121,6 +121,7 @@ class _AddTodoPageState extends State<AddTodoPage> {
                           Todo(
                             title: titleTextController.text,
                             description: descriptionTextController.text,
+                            dueDate: dueDate,
                             isDone: false,
                             priority: priority
                           )
