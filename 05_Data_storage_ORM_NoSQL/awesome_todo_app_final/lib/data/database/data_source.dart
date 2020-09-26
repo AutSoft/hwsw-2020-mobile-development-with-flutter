@@ -1,4 +1,5 @@
 import 'package:awesome_todo_app/data/database/floor/floor_todo.dart';
+import 'package:awesome_todo_app/data/database/sembast/sembast_todo.dart';
 import 'package:awesome_todo_app/domain/model/todo_priority.dart';
 import 'package:awesome_todo_app/util.dart';
 
@@ -7,7 +8,7 @@ import 'moor/moor_todo.dart';
 import 'todo_repository.dart';
 
 class DataSource {
-  final TodoRepository<MoorTodoData> database;
+  final TodoRepository<SembastTodo> database;
 
   DataSource(this.database);
 
@@ -30,17 +31,15 @@ class DataSource {
   }
 
   Future<void> upsertTodo(Todo todo) async {
-    return database.upsertTodo(todo.toMoorTodoData());
+    return database.upsertTodo(todo.toSembastTodo());
   }
 
   Future<void> deleteTodo(Todo todo) async {
-    return database.deleteTodo(todo.toMoorTodoData());
+    return database.deleteTodo(todo.toSembastTodo());
   }
 
   Future<void> setTodoDone(Todo todo, bool isDone) async {
-    return database.upsertTodo(
-      todo.toMoorTodoData().copyWith(isDone: isDone),
-    );
+    return database.upsertTodo(todo.toSembastTodo()..isDone = isDone);
   }
 }
 
@@ -58,66 +57,65 @@ extension TodoToFloorTodo on Todo {
 
 extension FloorTodoToTodo on FloorTodo {
   Todo toTodo() {
-    TodoPriority priority;
-    switch (this.priority) {
-      case 0:
-        priority = TodoPriority.LOW;
-        break;
-      case 1:
-        priority = TodoPriority.NORMAL;
-        break;
-      case 2:
-        priority = TodoPriority.HIGH;
-        break;
-      default:
-        throw ArgumentError(
-            "Invalid Todo priority encountered while mapping database object to domain object");
-    }
     return Todo(
-        id: this.id,
-        title: this.title,
-        description: this.description,
-        priority: priority,
-        isDone: this.isDone == 1 ? true : false,
-        dueDate: parseDate(this.dueDate));
+      id: this.id,
+      title: this.title,
+      description: this.description,
+      priority: todoPriorityFromInt(this.priority),
+      isDone: this.isDone == 1 ? true : false,
+      dueDate: parseDate(this.dueDate),
+    );
   }
 }
 
 extension TodoToMoorTodoData on Todo {
   MoorTodoData toMoorTodoData() {
     return MoorTodoData(
-        id: this.id,
-        title: this.title,
-        description: this.description,
-        priority: this.priority.index,
-        isDone: this.isDone,
-        dueDate: getFormattedDate(this.dueDate));
+      id: this.id,
+      title: this.title,
+      description: this.description,
+      priority: this.priority.index,
+      isDone: this.isDone,
+      dueDate: getFormattedDate(this.dueDate),
+    );
   }
 }
 
 extension MoorTodoDataToTodo on MoorTodoData {
   Todo toTodo() {
-    TodoPriority priority;
-    switch (this.priority) {
-      case 0:
-        priority = TodoPriority.LOW;
-        break;
-      case 1:
-        priority = TodoPriority.NORMAL;
-        break;
-      case 2:
-        priority = TodoPriority.HIGH;
-        break;
-      default:
-        throw ArgumentError(
-            "Invalid Todo priority encountered while mapping database object to domain object");
-    }
     return Todo(
-        id: this.id,
-        title: this.title,
-        description: this.description,
-        priority: priority,
-        isDone: this.isDone,
-        dueDate: parseDate(this.dueDate));
+      id: this.id,
+      title: this.title,
+      description: this.description,
+      priority: todoPriorityFromInt(this.priority),
+      isDone: this.isDone,
+      dueDate: parseDate(this.dueDate),
+    );
+  }
+}
+
+extension TodoToSembastTodo on Todo {
+  SembastTodo toSembastTodo() {
+    return SembastTodo(
+      id: this.id,
+      title: this.title,
+      description: this.description,
+      priority: this.priority.index,
+      isDone: this.isDone,
+      dueDate: getFormattedDate(this.dueDate),
+    );
+  }
+}
+
+extension SembastTodoToTodo on SembastTodo {
+  Todo toTodo() {
+    return Todo(
+      id: this.id,
+      title: this.title,
+      description: this.description,
+      priority: todoPriorityFromInt(this.priority),
+      isDone: this.isDone,
+      dueDate: parseDate(this.dueDate),
+    );
   }
 }
