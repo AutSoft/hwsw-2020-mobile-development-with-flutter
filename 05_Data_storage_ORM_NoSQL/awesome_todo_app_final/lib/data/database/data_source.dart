@@ -1,4 +1,5 @@
 import 'package:awesome_todo_app/data/database/floor/floor_todo.dart';
+import 'package:awesome_todo_app/data/database/hive/hive_todo.dart';
 import 'package:awesome_todo_app/data/database/sembast/sembast_todo.dart';
 import 'package:awesome_todo_app/domain/model/todo_priority.dart';
 import 'package:awesome_todo_app/util.dart';
@@ -8,7 +9,7 @@ import 'moor/moor_todo.dart';
 import 'todo_repository.dart';
 
 class DataSource {
-  final TodoRepository<SembastTodo> database;
+  final TodoRepository<HiveTodo> database;
 
   DataSource(this.database);
 
@@ -20,26 +21,26 @@ class DataSource {
     final todos = await database.getAllTodos();
     return todos
         .map(
-          (moorTodo) => moorTodo.toTodo(),
+          (hiveTodo) => hiveTodo.toTodo(),
         )
         .toList();
   }
 
   Future<Todo> getTodo(int id) async {
-    final moorTodo = await database.getTodo(id);
-    return moorTodo.toTodo();
+    final hiveTodo = await database.getTodo(id);
+    return hiveTodo.toTodo();
   }
 
   Future<void> upsertTodo(Todo todo) async {
-    return database.upsertTodo(todo.toSembastTodo());
+    return database.upsertTodo(todo.toHiveTodo());
   }
 
   Future<void> deleteTodo(Todo todo) async {
-    return database.deleteTodo(todo.toSembastTodo());
+    return database.deleteTodo(todo.toHiveTodo());
   }
 
   Future<void> setTodoDone(Todo todo, bool isDone) async {
-    return database.upsertTodo(todo.toSembastTodo()..isDone = isDone);
+    return database.upsertTodo(todo.toHiveTodo()..isDone = isDone);
   }
 }
 
@@ -116,6 +117,32 @@ extension SembastTodoToTodo on SembastTodo {
       priority: todoPriorityFromInt(this.priority),
       isDone: this.isDone,
       dueDate: parseDate(this.dueDate),
+    );
+  }
+}
+
+extension TodoToHiveTodo on Todo {
+  HiveTodo toHiveTodo() {
+    return HiveTodo(
+      id: this.id,
+      title: this.title,
+      description: this.description,
+      priority: this.priority.index,
+      isDone: this.isDone,
+      dueDate: this.dueDate,
+    );
+  }
+}
+
+extension HiveTodoToTodo on HiveTodo {
+  Todo toTodo() {
+    return Todo(
+      id: this.id,
+      title: this.title,
+      description: this.description,
+      priority: todoPriorityFromInt(this.priority),
+      isDone: this.isDone,
+      dueDate: this.dueDate,
     );
   }
 }
