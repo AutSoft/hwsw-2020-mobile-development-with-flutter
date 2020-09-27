@@ -1,7 +1,7 @@
 import 'package:awesome_todo_app/data/database/data_source.dart';
 import 'package:flutter/material.dart';
 
-import 'data/database/sembast/sembast_todo_repository.dart';
+import 'data/database/hive/hive_todo_repository.dart';
 import 'data/datasource_provider.dart';
 import 'ui/list/todo_list.dart';
 
@@ -12,8 +12,8 @@ void main() async {
     // MemoryTodoRepository(),
     // FloorTodoRepository()
     // MoorTodoRepository()
-    SembastTodoRepository()
-    // HiveTodoRepository()
+    // SembastTodoRepository()
+    HiveTodoRepository()
   );
 
   await dataSource.init();
