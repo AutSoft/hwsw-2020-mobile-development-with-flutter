@@ -4,6 +4,7 @@ import 'package:awesome_todo_app/ui/details/todo_details.dart';
 import 'package:awesome_todo_app/ui/list/todo_list_item.dart';
 import 'package:awesome_todo_app/ui/newtodo/add_todo.dart';
 import 'package:flutter/material.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class TodoListPage extends StatefulWidget {
   final DataSource dataSource;
@@ -17,13 +18,32 @@ class TodoListPage extends StatefulWidget {
 class _TodoListPageState extends State<TodoListPage> {
   DataSource _todosDataSource;
   Future<List<Todo>> _todosFuture;
+  Future<SharedPreferences> _prefs = SharedPreferences.getInstance();
+
+  static const HIDE_DONE_TODOS_KEY = "HIDE_DONE_TODOS";
+  Future<bool> _hideDoneTodos;
 
   _TodoListPageState(this._todosDataSource);
 
   @override
   void initState() {
     _todosFuture = _todosDataSource.getAllTodos();
+    _hideDoneTodos = _prefs.then((prefs) {
+      return prefs.getBool(HIDE_DONE_TODOS_KEY) ?? false;
+    });
     super.initState();
+  }
+
+  void onPopupMenuItemClicked(String value) async {
+    final prefs = await _prefs;
+    final hideDoneTodos = !(prefs.getBool(HIDE_DONE_TODOS_KEY) ?? false);
+    refreshTodos(() {
+      _hideDoneTodos = prefs
+          .setBool(HIDE_DONE_TODOS_KEY, hideDoneTodos)
+          .then((bool success) {
+        return hideDoneTodos;
+      });
+    });
   }
 
   void onDoneChanged(Todo todo, bool isDone) async {
@@ -50,9 +70,45 @@ class _TodoListPageState extends State<TodoListPage> {
     return Scaffold(
       appBar: AppBar(
         title: Text("Todo List"),
+        actions: [
+          PopupMenuButton(
+            onSelected: onPopupMenuItemClicked,
+            itemBuilder: (context) {
+              return [
+                PopupMenuItem(
+                  value: HIDE_DONE_TODOS_KEY,
+                  child: Row(
+                    children: [
+                      Text("Hide done todos"),
+                      FutureBuilder<bool>(
+                        future: _hideDoneTodos,
+                        builder: (context, snapshot) {
+                          if (snapshot.hasError ||
+                              snapshot.connectionState ==
+                                  ConnectionState.waiting) {
+                            return Checkbox(
+                              tristate: true,
+                              value: null,
+                              onChanged: null,
+                            );
+                          } else {
+                            return Checkbox(
+                              value: snapshot.data,
+                              onChanged: null,
+                            );
+                          }
+                        },
+                      ),
+                    ],
+                  ),
+                )
+              ];
+            },
+          ),
+        ],
       ),
-      body: FutureBuilder<List<Todo>>(
-          future: _todosFuture,
+      body: FutureBuilder<dynamic>(
+          future: Future.wait<dynamic>([_todosFuture, _hideDoneTodos]),
           builder: (context, asyncSnapshot) {
             if (asyncSnapshot.hasError) {
               return Center(
@@ -62,11 +118,20 @@ class _TodoListPageState extends State<TodoListPage> {
             }
 
             if (asyncSnapshot.hasData) {
+              List<Todo> items = (asyncSnapshot.data[0] as List<Todo>).toList();
+              int itemCount = items.length;
+              bool hideDoneTodos = asyncSnapshot.data[1] as bool;
+
+              if (hideDoneTodos) {
+                items.removeWhere((element) => element.isDone);
+                itemCount = items.length;
+              }
+
               return ListView.builder(
-                itemCount: asyncSnapshot.data.length,
+                itemCount: itemCount,
                 itemBuilder: (context, index) {
                   return TodoListItem(
-                    asyncSnapshot.data[index],
+                    items[index],
                     onTap: (todo) {
                       Navigator.of(context).push(MaterialPageRoute(
                           builder: (context) =>
