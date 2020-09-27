@@ -33,15 +33,16 @@ class _TodoListPageState extends State<TodoListPage> {
 
   void onDeletePressed(Todo todo) async {
     await _todosDataSource.deleteTodo(todo);
-    setState(() {
-      _todosFuture = _todosDataSource.getAllTodos();
-    });
+    refreshTodos();
   }
 
-  void refreshTodos() {
-    setState(() {
-      _todosFuture = _todosDataSource.getAllTodos();
-    });
+  void refreshTodos([Function beforeRefresh]) {
+    if (mounted) {
+      setState(() {
+        if (beforeRefresh != null) beforeRefresh();
+        _todosFuture = _todosDataSource.getAllTodos();
+      });
+    }
   }
 
   @override
@@ -56,7 +57,7 @@ class _TodoListPageState extends State<TodoListPage> {
             if (asyncSnapshot.hasError) {
               return Center(
                 child: Text(
-                    "Oh no, something went wrong while loading the Todo list. :("),
+                    "Oh no, something went wrong while loading the Todo list. :( reason: ${asyncSnapshot.error}"),
               );
             }
 
@@ -71,7 +72,8 @@ class _TodoListPageState extends State<TodoListPage> {
                           builder: (context) =>
                               TodoDetails(_todosDataSource, todo.id)));
                     },
-                    onDoneChanged: (todo, isDone) => onDoneChanged(todo, isDone),
+                    onDoneChanged: (todo, isDone) =>
+                        onDoneChanged(todo, isDone),
                     onDeletePressed: (todo) => onDeletePressed(todo),
                   );
                 },

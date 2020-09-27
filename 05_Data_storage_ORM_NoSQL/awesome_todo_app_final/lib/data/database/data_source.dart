@@ -35,6 +35,6 @@ class DataSource {
       description: todo.description,
       priority: todo.priority
     );
-    return database.upsertTodo(todo);
+    return database.upsertTodo(newTodo);
   }
 }

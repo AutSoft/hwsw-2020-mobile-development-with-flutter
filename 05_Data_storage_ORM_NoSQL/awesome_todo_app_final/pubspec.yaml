@@ -44,7 +44,7 @@ dev_dependencies:
   build_runner: ^1.10.1
   floor_generator: ^0.14.0
   moor_generator: ^3.3.1
-  hive_generator: ^0.7.1
+  hive_generator: ^0.7.2+1
 
 
 # For information on the generic Dart part of this file, see the
