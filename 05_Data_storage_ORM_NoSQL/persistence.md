@@ -1,5 +1,73 @@
 # 05 Data storage, ORM, NoSQL
 
+# ImageDownloader
+
+```dart
+class _ImageDownloaderPageState extends State<ImageDownloaderPage> {
+    // ...
+    
+    Future<Directory> _getImagesDirectory() async {
+      final directory = await getApplicationDocumentsDirectory();
+      return Directory(path.join(directory.path, IMAGES_DIR)).create();
+    }
+    
+    void _downloadNewImage() async {
+      final response = await http.get("https://picsum.photos/400");
+      final imagesDir = await _getImagesDirectory();
+      final filePath = path.join(
+        imagesDir.path,
+        "${DateTime.now().toIso8601String()}.jpg",
+      );
+      final file = File(filePath);
+      await file.writeAsBytes(response.bodyBytes);
+      print("Image downloaded to: $filePath");
+        
+      setState(() {
+        _imageFiles = _loadImages();
+      });
+    }
+    
+    Future<List<File>> _loadImages() async {
+      final imagesDir = await _getImagesDirectory();
+      return imagesDir.list()
+          .where((element) => element.path.endsWith(".jpg"))
+          .map((e) => File(e.path))
+          .toList();
+    }
+    
+    // Scaffold body
+    
+    FutureBuilder<List<File>>(
+          future: _imageFiles,
+          builder: (context, snapshot) {
+            if (snapshot.hasData) {
+              final imageFiles = snapshot.data;
+              return GridView.builder(
+                controller: scrollController,
+                itemCount: imageFiles.length,
+                gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                    crossAxisCount: 2),
+                itemBuilder: (context, index) {
+                  return Image.file(imageFiles[index]);
+                },
+              );
+            }
+            return Center(
+              child: CircularProgressIndicator(),
+            );
+          }),
+    
+    // Scaffold FAB
+    
+    FloatingActionButton(
+        onPressed: _downloadNewImage,
+        tooltip: 'Download image',
+        child: Icon(Icons.file_download),
+      ),
+    
+    
+```
+
 # AwesomeTodoApp
 
 ## In-memory
