@@ -1,4 +1,6 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_forum/ui/posts/posts_page.dart';
 
 class LoginPage extends StatefulWidget {
   @override
@@ -12,14 +14,47 @@ class _LoginPageState extends State<LoginPage> {
   var _emailValid = true;
   var _passwordValid = true;
 
-  Future<void> _tryLogin() async {
+  Future<void> _tryLogin(BuildContext context) async {
     final email = _emailController.text;
     final password = _passwordController.text;
     // TODO Implement Firebase login
+    try {
+      await FirebaseAuth.instance.signInWithEmailAndPassword(email: email, password: password);
+
+      print("Logging in...");
+
+      Navigator.of(context).pushReplacement(
+        MaterialPageRoute(
+          builder: (context) => PostsPage(),
+        ),
+      );
+    } on Exception catch (e) {
+      print("Login failed: ${e.toString()}");
+    }
   }
 
-  Future<void> _tryRegistration() {
+  Future<void> _tryRegistration(BuildContext context) async {
+    final email = _emailController.text;
+    final password = _passwordController.text;
     // TODO Implement Firebase user registration
+    try {
+      await FirebaseAuth.instance.createUserWithEmailAndPassword(
+        email: email,
+        password: password,
+      );
+
+      print("User registration successful! Logging in...");
+
+      await FirebaseAuth.instance.signInWithEmailAndPassword(email: email, password: password);
+
+      Navigator.of(context).pushReplacement(
+        MaterialPageRoute(
+          builder: (context) => PostsPage(),
+        ),
+      );
+    } on Exception catch (e) {
+      print("User registration/login failed: ${e.toString()}");
+    }
   }
 
   @override
@@ -48,11 +83,10 @@ class _LoginPageState extends State<LoginPage> {
                 TextField(
                   controller: _emailController,
                   decoration: InputDecoration(
-                      alignLabelWithHint: true,
-                      labelText: "Email address",
-                      errorText: _emailValid
-                          ? null
-                          : "Please provide a valid email address"),
+                    alignLabelWithHint: true,
+                    labelText: "Email address",
+                    errorText: _emailValid ? null : "Please provide a valid email address",
+                  ),
                   keyboardType: TextInputType.emailAddress,
                 ),
                 TextField(
@@ -60,9 +94,7 @@ class _LoginPageState extends State<LoginPage> {
                   decoration: InputDecoration(
                     alignLabelWithHint: true,
                     labelText: "Password",
-                    errorText: _passwordValid
-                        ? null
-                        : "The given password is invalid or not strong enough",
+                    errorText: _passwordValid ? null : "The given password is invalid or not strong enough",
                   ),
                   keyboardType: TextInputType.visiblePassword,
                   obscureText: true,
@@ -74,7 +106,7 @@ class _LoginPageState extends State<LoginPage> {
                       Expanded(
                         child: RaisedButton(
                           onPressed: () {
-                            _tryLogin();
+                            _tryLogin(context);
                           },
                           child: Text("Login".toUpperCase()),
                         ),
@@ -89,7 +121,7 @@ class _LoginPageState extends State<LoginPage> {
                       Expanded(
                         child: RaisedButton(
                           onPressed: () {
-                            _tryRegistration();
+                            _tryRegistration(context);
                           },
                           child: Text("Register".toUpperCase()),
                         ),

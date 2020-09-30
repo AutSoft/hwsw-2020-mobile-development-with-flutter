@@ -1,5 +1,13 @@
+import 'dart:async';
+
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:firebase_crashlytics/firebase_crashlytics.dart';
+import 'package:firebase_database/firebase_database.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_forum/domain/model/post.dart';
+import 'package:flutter_forum/ui/createpost/create_post_page.dart';
 import 'package:flutter_forum/ui/login/login_page.dart';
+import 'package:flutter_forum/ui/posts/post_item.dart';
 
 class PostsPage extends StatefulWidget {
   @override
@@ -7,8 +15,46 @@ class PostsPage extends StatefulWidget {
 }
 
 class _PostsPageState extends State<PostsPage> {
-  Future<void> _logout() {
-    // TODO log out the logged in Firebase user
+  String loggedInUserEmail = "test@example.com";
+  StreamSubscription userEventsSubscription;
+  StreamSubscription postsEventsSubsription;
+  Future<DataSnapshot> _postsSnapshot;
+
+  List<Post> posts = [];
+
+  @override
+  void initState() {
+    // TODO Register for Firebase user changes
+    userEventsSubscription = FirebaseAuth.instance.authStateChanges().listen((user) {
+      if (user != null) {
+        setState(() {
+          loggedInUserEmail = user.email;
+        });
+      }
+    });
+
+    // TODO Register for Database changes
+    final postsRef = FirebaseDatabase.instance.reference().child("posts");
+
+    postsEventsSubsription = postsRef.onChildAdded.listen((event) {
+      final value = Map<String, dynamic>.from(event.snapshot.value);
+      final newPost = Post.fromJson(value);
+
+      setState(() {
+        posts.add(newPost);
+      });
+    });
+  }
+
+  Future<void> _logOut() {
+    // TODO Sing out the user
+    return FirebaseAuth.instance.signOut();
+  }
+
+  void _apocalypse() async {
+    // TODO Crash the app
+    print("Has crashes: ${await FirebaseCrashlytics.instance.checkForUnsentReports()}");
+    FirebaseCrashlytics.instance.crash();
   }
 
   @override
@@ -17,34 +63,91 @@ class _PostsPageState extends State<PostsPage> {
       appBar: AppBar(
         title: Text("FlutterForum Posts"),
       ),
+      body: ListView.builder(
+        itemCount: posts.length,
+        itemBuilder: (context, index) {
+          return PostItem(posts[index]);
+        },
+      ),
       drawer: Drawer(
         child: Column(
           children: [
             Material(
               child: UserAccountsDrawerHeader(
-                accountName: null,
-                accountEmail: null,
+                accountName: Text(
+                  loggedInUserEmail.substring(0, loggedInUserEmail.indexOf("@")),
+                ),
+                accountEmail: Text(loggedInUserEmail),
               ),
             ),
-            InkWell(
+            DrawerMenuItem(
+              icon: Icon(Icons.exit_to_app),
+              text: Text("Logout"),
               onTap: () {
-                _logout();
+                _logOut();
                 Navigator.of(context).pushReplacement(
                   MaterialPageRoute(
                     builder: (context) => LoginPage(),
                   ),
                 );
               },
-              child: Row(
-                children: [
-                  Text("Logout"),
-                ],
+            ),
+            DrawerMenuItem(
+              icon: Icon(
+                Icons.cancel,
+                color: Colors.red,
               ),
+              text: Text("Crash the app :("),
+              onTap: () {
+                _apocalypse();
+              },
             ),
           ],
         ),
       ),
-      body: FutureBuilder(builder: (context, snapshot) {}),
+      // body: FutureBuilder(builder: (context, snapshot) {}),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          Navigator.of(context).push(
+            MaterialPageRoute(builder: (context) => CreatePostPage()),
+          );
+        },
+        child: Icon(Icons.forum),
+      ),
+    );
+  }
+
+  @override
+  void dispose() {
+    if (userEventsSubscription != null) userEventsSubscription.cancel();
+    if (postsEventsSubsription != null) postsEventsSubsription.cancel();
+    super.dispose();
+  }
+}
+
+class DrawerMenuItem extends StatelessWidget {
+  final Icon icon;
+  final Text text;
+  final Function() onTap;
+
+  DrawerMenuItem({this.icon, this.text, this.onTap});
+
+  @override
+  Widget build(BuildContext context) {
+    return InkWell(
+      onTap: onTap,
+      child: Padding(
+        padding: const EdgeInsets.all(8.0),
+        child: Row(
+          children: [
+            Padding(
+              padding: const EdgeInsets.only(right: 4.0),
+              child: icon,
+            ),
+            text,
+          ],
+        ),
+      ),
     );
   }
 }
