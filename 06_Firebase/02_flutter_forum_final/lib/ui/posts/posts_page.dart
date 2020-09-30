@@ -47,13 +47,12 @@ class _PostsPageState extends State<PostsPage> {
   }
 
   Future<void> _logOut() {
-    // TODO Sing out the user
+    // TODO Sign out the user
     return FirebaseAuth.instance.signOut();
   }
 
   void _apocalypse() async {
     // TODO Crash the app
-    print("Has crashes: ${await FirebaseCrashlytics.instance.checkForUnsentReports()}");
     FirebaseCrashlytics.instance.crash();
   }
 
