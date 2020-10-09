@@ -1,5 +1,4 @@
 import 'package:chopper/chopper.dart';
-import 'package:ny_times_most_popular/data/network/model/network_article.dart';
 import 'package:ny_times_most_popular/data/network/model/network_reply.dart';
 
 part 'nyt_api.chopper.dart';
