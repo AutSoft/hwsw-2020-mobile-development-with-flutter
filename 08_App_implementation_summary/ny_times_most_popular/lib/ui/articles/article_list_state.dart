@@ -15,7 +15,7 @@ class Loading extends ArticleListState {
   Loading._();
 }
 
-class Content extends ArticleListState with EquatableMixin {
+abstract class Content extends ArticleListState with EquatableMixin {
   final List<Article> articles;
 
   Content({@required this.articles});

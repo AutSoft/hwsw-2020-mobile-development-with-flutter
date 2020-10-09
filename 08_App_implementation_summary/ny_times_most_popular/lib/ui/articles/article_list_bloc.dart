@@ -31,8 +31,8 @@ class ArticleListBloc extends Bloc<ArticleListEvent, ArticleListState> {
     print("Getting Articles from DB");
     final articles = await _articleInteractor.getArticles();
 
-     print("Articles refreshed, sending Content state with Article list");
-    yield Content(articles: articles);
+    print("Articles refreshed, sending Content state with Article list");
+    yield ContentReady(articles: articles);
   }
 
   Stream<ArticleListState> _mapRefreshArticlesEvent() async* {
@@ -55,6 +55,6 @@ class ArticleListBloc extends Bloc<ArticleListEvent, ArticleListState> {
     print("Getting Articles from DB");
     final articles = await _articleInteractor.getArticles();
 
-    yield Content(articles: articles);
+    yield ContentReady(articles: articles);
   }
 }
